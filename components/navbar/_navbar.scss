@@ -39,7 +39,7 @@ nav {
 }
 
 .mobile-links {
-    background: rgba(26, 26, 26, 0.4);
+    background: rgba(26, 26, 26);
     backdrop-filter: blur(100px);
     display: flex;
     flex-direction: column;
@@ -56,8 +56,19 @@ nav {
         margin-bottom: 80px;
     }
 
+    .btns {
+        display: flex;
+        align-items: center;
+
+        a {
+            margin: 0 25px;
+            color: $primaryColor;
+        }
+    }
+
+
     &.show {
-        height: 390px;
+        height: 505px;
     }
 }
 
@@ -95,6 +106,7 @@ nav {
         .btns {
             a {
                 margin: 0 25px;
+                color: $primaryColor;
             }
 
             button {

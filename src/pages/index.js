@@ -9,7 +9,25 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main></main>
+      <main>
+        <Header />
+      </main>
     </>
   );
 }
+
+const Header = () => {
+  return (
+    <header>
+      <div className='ellipse'></div>
+      <h1>P2E MULTI-CHAIN/INTER-CHAIN CHESS GAME</h1>
+      <p>
+        Play and earn in an exciting multi-chain NFT chess game for chess and
+        blockchain enthusiasts.
+      </p>
+      <a href='#'>
+        <button className='green'>Play game</button>
+      </a>
+    </header>
+  );
+};

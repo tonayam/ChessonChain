@@ -5,6 +5,9 @@
 @import "../../components/navbar/navbar";
 @import "../../components/footer/footer";
 
+// PAGES
+@import "./home";
+
 
 
 * {
@@ -17,6 +20,10 @@ body {
     font-family: 'Space Grotesk', sans-serif;
     background-color: $bgColor;
     color: #ffffff;
+}
+
+p {
+    color: #BDBDBD;
 }
 
 a {

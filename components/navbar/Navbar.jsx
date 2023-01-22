@@ -38,6 +38,12 @@ const Navbar = () => {
         <a href='#'>Home</a>
         <a href='#'>About</a>
         <a href='#'>Contact us</a>
+        <div className='btns'>
+          <a href='#'>
+            <button className='green'>Sign in</button>
+          </a>
+          <a href='#'>Sign up</a>
+        </div>
       </div>
     </>
   );
