@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { chartData, tokenDistribution } from "data/data";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
         <Header />
         <TheGame />
         <MultiChainEconomy />
+        <NFT />
+        <Tokenomics />
       </main>
     </>
   );
@@ -79,6 +82,64 @@ const MultiChainEconomy = () => {
             alt='multi-chain-economy diagram'
             fill
           />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const NFT = () => {
+  return (
+    <section className='nft'>
+      <h2 className='section-title'>NFT</h2>
+      <div className='img'>
+        <Image src='/nft.png' alt='nft' fill />
+      </div>
+      <p>
+        The chessOnchain NFTs are the representatives of the world blockchain
+        multi-chain chess gaming community. Holders of this NFT will be
+        recognized as part of the blockchain chess association, and have special
+        abilities and in game advantages
+      </p>
+      <div className='ellipse left'></div>
+      <div className='ellipse right'></div>
+    </section>
+  );
+};
+
+const Tokenomics = () => {
+  return (
+    <section className='tokenomics'>
+      <h2 className='section-title'>Tokenomics</h2>
+      <div className='blocks'>
+        <div className='block img'>
+          <Image src='/token-chart.png' alt='token chart' fill />
+        </div>
+        <div className='block tokens-dist'>
+          <div className='chart-data'>
+            {chartData.map((item, index) => {
+              return (
+                <div className='item' key={index}>
+                  <div
+                    className='color'
+                    style={{ background: item.color }}
+                  ></div>
+                  <p>{item.text}</p>
+                </div>
+              );
+            })}
+          </div>
+          <div className='distribution'>
+            <h2>TOKEN DISTRIBUTION</h2>
+            {tokenDistribution.map((token, index) => {
+              return (
+                <div className={`item ${token.class}`} key={index}>
+                  <p>{token.title}</p>
+                  <p>{token.num.toLocaleString(`en-US`)}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

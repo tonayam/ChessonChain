@@ -5,6 +5,7 @@ header {
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100%;
+    margin-bottom: 70px;
 
     h1 {
         font-weight: 400;
@@ -34,7 +35,7 @@ header {
 }
 
 section {
-    padding: 100px 24px;
+    padding: 50px 24px;
 
     .section-title {
         font-weight: 700;
@@ -42,7 +43,13 @@ section {
         line-height: 23px;
         text-align: center;
         color: $primaryColor;
+        text-transform: uppercase;
     }
+}
+
+.the-game,
+.multi-chain-economy,
+.tokenomics {
 
     .blocks {
         display: grid;
@@ -84,6 +91,93 @@ section {
                 height: 168px;
             }
         }
+    }
+
+    &.tokenomics {
+        .blocks {
+            .img {
+                position: relative;
+                width: 255.88px;
+                height: 256px;
+            }
+
+            .tokens-dist {
+                display: flex;
+                flex-direction: column;
+                text-align: start;
+
+                .chart-data {
+
+                    .item {
+                        display: flex;
+                        align-items: center;
+                        margin: 15px 0;
+
+                        .color {
+                            min-width: 20px;
+                            height: 20px;
+                            margin-right: 10px;
+                        }
+
+                        p {
+                            font-weight: 700;
+                            font-size: 10px;
+                            line-height: 18px;
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                .distribution {
+                    margin-top: 20px;
+
+                    h2 {
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 23px;
+                        margin-bottom: 20px;
+                    }
+
+                    .item {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0 10px;
+
+                        p {
+                            color: #ffffff;
+                            font-weight: 700;
+                            font-size: 10px;
+                            line-height: 21px;
+                        }
+
+                        &.grey {
+                            background: #2C2C2C;
+                        }
+
+                        &.dark {
+                            background: #1C1C1C;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nft {
+    text-align: center;
+
+    .img {
+        position: relative;
+        width: 344.08px;
+        height: 123.96px;
+        margin: 30px 0 10px 0;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
     }
 }
 
@@ -136,7 +230,11 @@ section {
             line-height: 41px;
             margin-bottom: 80px;
         }
+    }
 
+    .the-game,
+    .multi-chain-economy,
+    .tokenomics {
         .blocks {
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
@@ -170,6 +268,80 @@ section {
                     width: 432px;
                     height: 391.28px;
                 }
+            }
+        }
+
+        &.tokenomics {
+            .blocks {
+                .img {
+                    width: 440.47px;
+                    height: 440.67px;
+                }
+
+                .tokens-dist {
+                    .chart-data {
+                        .item {
+                            .color {
+                                margin-right: 20px;
+                            }
+
+                            p {
+                                font-size: 12px;
+                                line-height: 30px;
+                            }
+                        }
+                    }
+
+                    .distribution {
+                        h2 {
+                            font-size: 32px;
+                            line-height: 41px;
+                        }
+
+                        .item {
+                            p {
+                                font-size: 12px;
+                                line-height: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nft {
+        position: relative;
+        overflow-x: hidden;
+
+        .img {
+            width: 879.92px;
+            height: 317px;
+            margin: 30px auto 30px auto;
+        }
+
+        p {
+            line-height: 28px;
+            width: 878px;
+            padding: 0 30px;
+            margin: auto;
+        }
+
+        .ellipse {
+            position: absolute;
+            width: 479px;
+            height: 479px;
+            top: 140px;
+            background: $primaryColor;
+            opacity: 0.2;
+            filter: blur(150px);
+
+            &.left {
+                left: -340px;
+            }
+
+            &.right {
+                right: -340px;
             }
         }
     }
