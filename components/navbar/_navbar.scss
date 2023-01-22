@@ -1,0 +1,126 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 18px 20px 8px 20px;
+
+    .logo {
+        color: $primaryColor;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .links,
+    .btns {
+        display: none;
+    }
+
+    .hambugger-menu {
+        color: #A5A3A3;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+
+        .display-mode {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: #232323;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+    }
+
+
+}
+
+.mobile-links {
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.5s linear height;
+    position: absolute;
+    z-index: 4;
+
+    a {
+        margin-bottom: 80px;
+    }
+
+    &.show {
+        height: 390px;
+    }
+}
+
+@include for-phone-only {}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        padding: 20px 80px;
+
+        .logo {
+            font-size: 32px;
+            line-height: 41px;
+        }
+
+        .links,
+        .btns {
+            display: flex;
+            align-items: center;
+        }
+
+        .links {
+            a {
+                margin: 0 40px;
+            }
+        }
+
+        .btns {
+            a {
+                margin: 0 25px;
+            }
+
+            button {
+                width: 124px;
+            }
+
+            .display-mode {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                background: #232323;
+                border-radius: 5px;
+                font-size: 1.5rem;
+            }
+        }
+
+        .hambugger-menu {
+            display: none;
+        }
+    }
+
+    .mobile-links {
+        display: none;
+    }
+}
+
+@include for-big-desktop-up {}
