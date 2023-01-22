@@ -35,6 +35,14 @@ ul {
     list-style-type: none;
 }
 
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    align-self: center;
+}
+
+
 button {
     padding: 14px 35px;
     border: none;

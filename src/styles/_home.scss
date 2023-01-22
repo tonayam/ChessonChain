@@ -69,10 +69,7 @@ section {
     &.the-game {
         .blocks {
             .img {
-                background: url(../../public/the-game.png);
-                background-size: 100%;
-                background-repeat: no-repeat;
-                background-position: center;
+                position: relative;
                 width: 256px;
                 min-height: 171px;
             }
@@ -82,10 +79,7 @@ section {
     &.multi-chain-economy {
         .blocks {
             .img {
-                background: url(../../public/multichain-mobile.png);
-                background-size: 100%;
-                background-repeat: no-repeat;
-                background-position: center;
+                position: relative;
                 width: 185.48px;
                 height: 168px;
             }
@@ -164,10 +158,6 @@ section {
         &.the-game {
             .blocks {
                 .img {
-                    background: url(../../public/the-game-desktop.png);
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-                    background-position: center;
                     width: 520px;
                     height: 349px;
                 }
@@ -177,10 +167,6 @@ section {
         &.multi-chain-economy {
             .blocks {
                 .img {
-                    background: url(../../public/multichain-desktop.png);
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-                    background-position: center;
                     width: 432px;
                     height: 391.28px;
                 }

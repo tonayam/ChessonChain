@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+
 export default function Home() {
   return (
     <>
@@ -39,7 +40,9 @@ const TheGame = () => {
     <section className='the-game'>
       <h2 className='section-title'>THE GAME</h2>
       <div className='blocks'>
-        <div className='block img'></div>
+        <div className='block img'>
+          <Image src='/the-game-desktop.png' alt='chessboard' fill />
+        </div>
         <div className='block'>
           <p>
             ChessOnchain is a play to earn digital chess game where players can
@@ -70,7 +73,13 @@ const MultiChainEconomy = () => {
             the desired future of the blockchain economy.
           </p>
         </div>
-        <div className='block img'></div>
+        <div className='block img'>
+          <Image
+            src='/multichain-desktop.png'
+            alt='multi-chain-economy diagram'
+            fill
+          />
+        </div>
       </div>
     </section>
   );
