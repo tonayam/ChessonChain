@@ -33,7 +33,65 @@ header {
     }
 }
 
+section {
+    padding: 100px 24px;
 
+    .section-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+        color: $primaryColor;
+    }
+
+    .blocks {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        justify-items: center;
+
+        .block {
+            margin: 20px 0;
+            text-align: center;
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+            }
+
+            button {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    &.the-game {
+        .blocks {
+            .img {
+                background: url(../../public/the-game.png);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 256px;
+                min-height: 171px;
+            }
+        }
+    }
+
+    &.multi-chain-economy {
+        .blocks {
+            .img {
+                background: url(../../public/multichain-mobile.png);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 185.48px;
+                height: 168px;
+            }
+        }
+    }
+}
 
 @include for-phone-only {}
 
@@ -73,6 +131,60 @@ header {
             top: 110px;
             opacity: 0.07;
             filter: blur(150px);
+        }
+    }
+
+    section {
+        padding: 100px 80px;
+
+        .section-title {
+            font-size: 32px;
+            line-height: 41px;
+            margin-bottom: 80px;
+        }
+
+        .blocks {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+
+            .block {
+                margin: 0 20px;
+                text-align: start;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                p {
+                    font-size: 16px;
+                    line-height: 28px;
+                }
+            }
+        }
+
+        &.the-game {
+            .blocks {
+                .img {
+                    background: url(../../public/the-game-desktop.png);
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 520px;
+                    height: 349px;
+                }
+            }
+        }
+
+        &.multi-chain-economy {
+            .blocks {
+                .img {
+                    background: url(../../public/multichain-desktop.png);
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 432px;
+                    height: 391.28px;
+                }
+            }
         }
     }
 }
