@@ -44,8 +44,12 @@ const Navbar = () => {
       </nav>
 
       <div className={`mobile-links ${showNavbar && `show`}`}>
-        <Link href='/'>Home</Link>
-        <Link href='about'>About</Link>
+        <Link href='/' onClick={closeNavbar}>
+          Home
+        </Link>
+        <Link href='about' onClick={closeNavbar}>
+          About
+        </Link>
         <Link href='contact' onClick={closeNavbar}>
           Contact us
         </Link>
