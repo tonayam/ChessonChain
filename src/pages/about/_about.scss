@@ -1,0 +1,221 @@
+.about {
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+
+    header {
+        text-align: center;
+
+        h1 {
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 28px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 30px;
+        }
+
+        .image {
+            position: relative;
+            width: 256px;
+            height: 171px;
+            margin: 30px auto 0 auto;
+        }
+
+        .ellipse {
+            position: absolute;
+            width: 223px;
+            height: 223px;
+            background: $primaryColor;
+            opacity: 0.07;
+            filter: blur(50px);
+
+            &.left {
+                left: -46px;
+                top: 112px;
+            }
+
+            &.right {
+                left: 234px;
+                top: 477px;
+            }
+        }
+    }
+
+    .features {
+        margin-top: 100px;
+
+        .section-title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 23px;
+            text-align: center;
+            color: $primaryColor;
+        }
+
+        .blocks {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 20px;
+
+            .block {
+                text-align: center;
+                margin: 30px 0;
+
+                .image {
+                    position: relative;
+                    margin: auto;
+
+                    &.multichain {
+                        width: 77.94px;
+                        height: 60px;
+                    }
+
+                    &.token {
+                        width: 74px;
+                        height: 81px;
+                    }
+
+                }
+
+                h3 {
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 23px;
+                    margin: 20px 0;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+
+        }
+    }
+}
+
+
+@include for-phone-only {}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .about {
+        padding: 60px 80px;
+
+        header {
+
+            h1 {
+                font-size: 48px;
+                line-height: 61px;
+            }
+
+            p {
+                line-height: 28px;
+                color: #FFFFFF;
+                width: 987px;
+                margin: auto;
+            }
+
+            .image {
+                width: 499px;
+                height: 336px;
+            }
+
+            .ellipse {
+                width: 479px;
+                height: 479px;
+                opacity: 0.2;
+                filter: blur(150px);
+
+                &.left {
+                    left: -240px;
+                    top: 200px;
+                }
+
+                &.right {
+                    left: 1200px;
+                    top: 200px;
+                }
+            }
+        }
+
+        .features {
+            position: relative;
+
+            .section-title {
+                font-size: 32px;
+                line-height: 41px;
+            }
+
+            .blocks {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 80px;
+
+                .block {
+                    text-align: start;
+                    margin: 0;
+
+                    .image {
+                        margin: 0;
+
+                        &.multichain {
+                            width: 119.51px;
+                            height: 92px;
+                        }
+
+                        &.token {
+                            width: 84px;
+                            height: 92px;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 32px;
+                        line-height: 41px;
+                    }
+
+                    p {
+                        line-height: 28px;
+                        color: #FFFFFF;
+                    }
+
+                    &:last-child {
+                        margin-left: 30px;
+                    }
+                }
+            }
+
+            .ellipse {
+                position: absolute;
+                background: $primaryColor;
+                filter: blur(150px);
+                opacity: 0.07;
+
+                &.left {
+                    width: 245px;
+                    height: 245px;
+                    left: 309px;
+                    top: 100px;
+                }
+
+                &.right {
+                    width: 458px;
+                    height: 458px;
+                    right: -200px;
+                    top: 100px;
+                }
+            }
+        }
+    }
+}
+
+@include for-big-desktop-up {}
