@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -20,7 +21,7 @@ const Footer = () => {
             <a href='#'>About</a>
           </li>
           <li>
-            <a href='#'>Contact Us</a>
+            <Link href='contact'>Contact Us</Link>
           </li>
         </ul>
       </div>

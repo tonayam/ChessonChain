@@ -85,6 +85,11 @@ section {
 
     &.multi-chain-economy {
         .blocks {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+
             .img {
                 position: relative;
                 width: 185.48px;
@@ -95,6 +100,7 @@ section {
 
     &.tokenomics {
         .blocks {
+
             .img {
                 position: relative;
                 width: 255.88px;
@@ -121,7 +127,7 @@ section {
 
                         p {
                             font-weight: 700;
-                            font-size: 10px;
+                            font-size: 12px;
                             line-height: 18px;
                             color: #ffffff;
                         }
@@ -146,7 +152,7 @@ section {
                         p {
                             color: #ffffff;
                             font-weight: 700;
-                            font-size: 10px;
+                            font-size: 12px;
                             line-height: 21px;
                         }
 
@@ -264,6 +270,8 @@ section {
 
         &.multi-chain-economy {
             .blocks {
+                display: grid;
+
                 .img {
                     width: 432px;
                     height: 391.28px;
@@ -286,7 +294,7 @@ section {
                             }
 
                             p {
-                                font-size: 12px;
+                                font-size: 14px;
                                 line-height: 30px;
                             }
                         }
@@ -300,7 +308,7 @@ section {
 
                         .item {
                             p {
-                                font-size: 12px;
+                                font-size: 14px;
                                 line-height: 30px;
                             }
                         }

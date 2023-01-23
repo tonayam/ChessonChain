@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
+import Link from "next/link";
+import { useGlobalContext } from "context/context";
 
 const Navbar = () => {
-  const [showNavbar, setShowNavbar] = useState(false);
+  const { showNavbar, setShowNavbar } = useGlobalContext();
+
+  const closeNavbar = () => {
+    setShowNavbar(false);
+  };
 
   return (
     <>
       <nav>
-        <div className='logo'>ChessonChain</div>
+        <Link href='/' className='logo'>
+          ChessonChain
+        </Link>
         <div className='links'>
-          <a href='#'>Home</a>
-          <a href='#'>About</a>
-          <a href='#'>Contact us</a>
+          <Link href='/'>Home</Link>
+          <Link href='about'>About</Link>
+          <Link href='contact'>Contact us</Link>
         </div>
         <div className='btns'>
           <a href='#'>
@@ -34,10 +42,13 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+
       <div className={`mobile-links ${showNavbar && `show`}`}>
-        <a href='#'>Home</a>
-        <a href='#'>About</a>
-        <a href='#'>Contact us</a>
+        <Link href='/'>Home</Link>
+        <Link href='about'>About</Link>
+        <Link href='contact' onClick={closeNavbar}>
+          Contact us
+        </Link>
         <div className='btns'>
           <a href='#'>
             <button className='green'>Sign in</button>

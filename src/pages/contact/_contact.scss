@@ -1,0 +1,130 @@
+.contact {
+    padding: 100px 24px;
+
+    .text {
+        h1 {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 31px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            margin: 7px 0 32px 0;
+        }
+
+        .socials {
+            display: none;
+        }
+    }
+
+
+
+    .form-control {
+        margin: 20px 0;
+
+        label {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 15px;
+        }
+
+        input {
+            height: 36px;
+            width: 100%;
+            border: none;
+            background: rgba(136, 136, 136, 0.1);
+            border-bottom: 1px solid #FFFFFF;
+            margin-top: 10px;
+            outline: none;
+            padding: 0 1rem;
+            color: #FFFFFF;
+            font-size: 16px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            border: none;
+            background: rgba(136, 136, 136, 0.1);
+            border-bottom: 1px solid #FFFFFF;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #FFFFFF;
+            outline: none;
+            padding: 1rem;
+        }
+    }
+
+    .socials {
+        margin-top: 100px;
+
+        h2 {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 31px;
+        }
+
+        .platforms {
+            margin-top: 24px;
+
+            .icon {
+                font-size: 2rem;
+
+                &.twiiter {
+                    margin-left: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+@include for-phone-only {}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .contact {
+        padding: 100px 80px;
+        display: flex;
+        justify-content: space-between;
+
+        .text {
+            .socials {
+                display: block;
+            }
+        }
+
+
+        .inputs {
+            display: flex;
+        }
+
+        .form-control {
+            label {
+                font-size: 20px;
+                line-height: 26px;
+            }
+
+            input {
+                height: 48px;
+                width: 365px;
+            }
+
+            &.email {
+                margin-left: 40px;
+            }
+        }
+
+        .socials {
+            display: none;
+        }
+    }
+}
+
+@include for-big-desktop-up {}
