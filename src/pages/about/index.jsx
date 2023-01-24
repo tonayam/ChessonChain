@@ -100,8 +100,8 @@ const GameTypes = () => {
           return (
             <div className={`game ${position}`} key={gameIndex}>
               <h3>{gameType}</h3>
-              <div className='image'>
-                <Image src={icon} style={{ width: iconWidth }} alt={gameType} />
+              <div className='image' style={{ width: iconWidth }}>
+                <Image src={icon} fill alt={gameType} />
               </div>
               <p>{info}</p>
             </div>
