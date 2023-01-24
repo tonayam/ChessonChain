@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { gameTypes } from "data/data";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -23,6 +25,7 @@ const About = () => {
         <div className='ellipse right'></div>
       </header>
       <Features />
+      <GameTypes />
     </main>
   );
 };
@@ -61,6 +64,77 @@ const Features = () => {
       </div>
       <div className='ellipse left'></div>
       <div className='ellipse right'></div>
+    </section>
+  );
+};
+
+const GameTypes = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < 0) {
+      setIndex(gameTypes.length - 1);
+    }
+    if (index > gameTypes.length - 1) {
+      setIndex(0);
+    }
+    setTimeout(() => {
+      setIndex(index + 1);
+    }, 4000);
+  }, [index, gameTypes]);
+
+  return (
+    <section className='game-types'>
+      <h2 className='section-title'>GAME TYPES</h2>
+      <div className='games'>
+        {gameTypes.map((game, gameIndex) => {
+          let position = `nextSlide`;
+          if (gameIndex === index) {
+            position = "activeSlide";
+          }
+          if (
+            gameIndex === index - 1 ||
+            (index === 0 && gameIndex === gameTypes.length - 1)
+          ) {
+            position = `prevSLide`;
+          }
+
+          const { gameType, icon, info, iconWidth } = game;
+          return (
+            <div className={`game ${position}`} key={gameIndex}>
+              <h3>{gameType}</h3>
+              <div className='image'>
+                <Image src={icon} style={{ width: iconWidth }} alt={gameType} />
+              </div>
+              <p>{info}</p>
+            </div>
+          );
+        })}
+        <div className='pagination'>
+          {gameTypes.map((box, gameIndex) => {
+            let position = ``;
+            if (gameIndex === index) {
+              position = "activeSlide";
+            }
+
+            return (
+              <div
+                className={`box ${position}`}
+                key={gameIndex}
+                onClick={() => setIndex(gameIndex)}
+              ></div>
+            );
+          })}
+        </div>
+        <FaChevronLeft
+          className='btn left-btn'
+          onClick={() => setIndex(index - 1)}
+        />
+        <FaChevronRight
+          className='btn right-btn'
+          onClick={() => setIndex(index + 1)}
+        />
+      </div>
     </section>
   );
 };
