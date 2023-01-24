@@ -78,9 +78,6 @@ const GameTypes = () => {
     if (index > gameTypes.length - 1) {
       setIndex(0);
     }
-    setTimeout(() => {
-      setIndex(index + 1);
-    }, 4000);
   }, [index, gameTypes]);
 
   return (
