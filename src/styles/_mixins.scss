@@ -28,3 +28,12 @@
         @content;
     }
 }
+
+// LIGHT THEME
+@mixin lightTheme ($light-theme: true) {
+    @if $light-theme {
+        background: lighten($bgColor, 100%);
+        color: #000000 !important;
+
+    }
+}

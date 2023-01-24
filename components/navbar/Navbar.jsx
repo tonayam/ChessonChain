@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
+import { BsMoonStars } from "react-icons/bs";
 import Link from "next/link";
 import { useGlobalContext } from "context/context";
 
 const Navbar = () => {
   const { showNavbar, setShowNavbar } = useGlobalContext();
 
+  const [lightMode, setLightMode] = useState(false);
+
   const closeNavbar = () => {
     setShowNavbar(false);
   };
+
+  useEffect(() => {
+    if (lightMode) {
+      document.body.classList.add(`light-mode`);
+    } else {
+      document.body.classList.remove(`light-mode`);
+    }
+  }, [lightMode]);
 
   return (
     <>
@@ -28,12 +39,20 @@ const Navbar = () => {
           </a>
           <a href='#'>Sign up</a>
           <div className='display-mode'>
-            <FiSun />
+            {lightMode ? (
+              <BsMoonStars onClick={() => setLightMode(false)} />
+            ) : (
+              <FiSun onClick={() => setLightMode(true)} />
+            )}
           </div>
         </div>
         <div className='hambugger-menu'>
           <div className='display-mode'>
-            <FiSun />
+            {lightMode ? (
+              <BsMoonStars onClick={() => setLightMode(false)} />
+            ) : (
+              <FiSun onClick={() => setLightMode(true)} />
+            )}
           </div>
           {showNavbar ? (
             <FaTimes onClick={() => setShowNavbar(false)} />

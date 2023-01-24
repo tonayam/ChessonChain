@@ -8,7 +8,12 @@
         font-size: 18px;
         line-height: 23px;
         text-align: center;
-        color: $primaryColor;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+
+        body.light-mode & {
+            color: #000000;
+        }
     }
 
     header {
@@ -93,6 +98,10 @@
                     font-weight: 400;
                     font-size: 16px;
                     line-height: 24px;
+
+                    body.light-mode & {
+                        color: #000000;
+                    }
                 }
             }
 
@@ -131,15 +140,35 @@
                     font-size: 16px;
                     line-height: 20px;
                     color: #FFFFFF;
+
+                    body.light-mode & {
+                        color: #000000;
+                    }
+
                 }
 
                 .image {
                     position: relative;
-                    height: 100px;
+                    height: 22px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     margin: 12px 0;
+
+                    &.oneVone,
+                    &.interchain,
+                    &.target {
+                        width: 23px;
+                    }
+
+                    &.random-selector,
+                    &.bughouse {
+                        width: 50.9px;
+                    }
+
+                    &.speed-chess {
+                        width: 17.89px;
+                    }
                 }
 
                 p {
@@ -148,6 +177,10 @@
                     line-height: 20px;
                     color: #FFFFFF;
                     text-align: center;
+
+                    body.light-mode & {
+                        color: #000000;
+                    }
                 }
 
                 &.activeSlide {
@@ -180,15 +213,19 @@
 
                     &.activeSlide {
                         background: #FFFFFF;
+
+                        body.light-mode & {
+                            background-color: $primaryColor;
+                        }
                     }
                 }
             }
 
             .btn {
                 font-size: 1.5rem;
-                color: #696969;
+                color: $primaryColor;
                 position: absolute;
-                top: 77px;
+                top: 30px;
 
                 &.left-btn {
                     left: 2px;
@@ -196,12 +233,52 @@
 
                 &.right-btn {
                     right: 2px;
-                    color: $primaryColor;
                 }
 
             }
         }
 
+    }
+
+    .the-team {
+        margin-top: 100px;
+
+        .section-title {
+            color: #FFFFFF;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(2, 160px);
+            grid-gap: 20px;
+            margin-top: 50px;
+
+            .member {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .image {
+                    width: 160px;
+                    height: 160px;
+                    background: #D9D9D9;
+                }
+
+                h3 {
+                    width: 160px;
+                    border: 2px solid blue;
+                    text-align: center;
+                    margin: 20px 0 10px 0;
+                }
+
+                h4 {
+                    width: 112px;
+                    border: 2px solid red;
+                    text-align: center;
+                }
+            }
+        }
     }
 }
 
@@ -334,6 +411,22 @@
 
                     .image {
                         margin: 15px 0;
+                        height: 40px;
+
+                        &.oneVone,
+                        &.interchain,
+                        &.target {
+                            width: 41.63px;
+                        }
+
+                        &.random-selector,
+                        &.bughouse {
+                            width: 89px;
+                        }
+
+                        &.speed-chess {
+                            width: 31.29px;
+                        }
                     }
 
                     p {
@@ -348,6 +441,56 @@
                 }
             }
 
+        }
+
+        .the-team {
+            position: relative;
+
+            .team-members {
+                grid-template-columns: repeat(3, 1fr);
+                margin-top: 64px;
+
+                .member {
+                    .image {
+                        width: 320px;
+                        height: 320px;
+                    }
+
+                    h3 {
+                        width: 320px;
+                        margin: 40px 0 20px 0;
+                    }
+
+                    h4 {
+                        width: 215px;
+                    }
+                }
+            }
+
+            .ellipse {
+                position: absolute;
+                width: 491px;
+                height: 491px;
+
+                background: $primaryColor;
+                opacity: 0.07;
+                filter: blur(150px);
+
+                &.one {
+                    left: -142px;
+                    top: 10px;
+                }
+
+                &.two {
+                    left: 822px;
+                    top: 400px;
+                }
+
+                &.three {
+                    left: 185px;
+                    top: 600px;
+                }
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ const About = () => {
   return (
     <main className='about'>
       <header>
-        <h1>CHESSONCHAIN</h1>
+        <h1 className='section-title'>CHESSONCHAIN</h1>
         <p>
           ChessOnChain is a digital multichain/interchain, Play to Earn NFT game
           for chess and blockchain enthusiasts. It is a game of chess that is
@@ -26,6 +26,7 @@ const About = () => {
       </header>
       <Features />
       <GameTypes />
+      <TheTeam />
     </main>
   );
 };
@@ -78,7 +79,7 @@ const GameTypes = () => {
     if (index > gameTypes.length - 1) {
       setIndex(0);
     }
-  }, [index, gameTypes]);
+  }, [index]);
 
   return (
     <section className='game-types'>
@@ -96,11 +97,11 @@ const GameTypes = () => {
             position = `prevSLide`;
           }
 
-          const { gameType, icon, info, iconWidth } = game;
+          const { gameType, icon, info, widthClass } = game;
           return (
             <div className={`game ${position}`} key={gameIndex}>
               <h3>{gameType}</h3>
-              <div className='image' style={{ width: iconWidth }}>
+              <div className={`image ${widthClass}`}>
                 <Image src={icon} fill alt={gameType} />
               </div>
               <p>{info}</p>
@@ -132,6 +133,34 @@ const GameTypes = () => {
           onClick={() => setIndex(index + 1)}
         />
       </div>
+    </section>
+  );
+};
+
+const TheTeam = () => {
+  return (
+    <section className='the-team'>
+      <h2 className='section-title'>THE TEAM</h2>
+      <div className='team-members'>
+        <div className='member'>
+          <div className='image'></div>
+          <h3>Name</h3>
+          <h4>Role</h4>
+        </div>
+        <div className='member'>
+          <div className='image'></div>
+          <h3>Name</h3>
+          <h4>Role</h4>
+        </div>
+        <div className='member'>
+          <div className='image'></div>
+          <h3>Name</h3>
+          <h4>Role</h4>
+        </div>
+      </div>
+      <div className='ellipse one'></div>
+      <div className='ellipse two'></div>
+      <div className='ellipse three'></div>
     </section>
   );
 };

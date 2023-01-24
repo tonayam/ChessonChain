@@ -5,6 +5,13 @@ nav {
     height: 50px;
     padding: 18px 20px 8px 20px;
 
+    body.light-mode & {
+        background: rgba(255, 255, 255, 0.4);
+        border-bottom: 0.1px solid #C6C6C6;
+        backdrop-filter: blur(25px);
+    }
+
+
     .logo {
         color: $primaryColor;
         font-weight: 700;
@@ -23,6 +30,10 @@ nav {
         display: flex;
         align-items: center;
 
+        body.light-mode & {
+            color: #000000;
+        }
+
         .display-mode {
             display: flex;
             align-items: center;
@@ -32,6 +43,10 @@ nav {
             background: #232323;
             border-radius: 5px;
             margin-right: 20px;
+
+            body.light-mode & {
+                background: #EFEFEF;
+            }
         }
     }
 
@@ -52,6 +67,8 @@ nav {
     position: absolute;
     z-index: 4;
 
+
+
     a {
         margin-bottom: 80px;
     }
@@ -68,8 +85,14 @@ nav {
 
 
     &.show {
-        height: 505px;
+        height: 520px;
     }
+
+    body.light-mode & {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(50px);
+    }
+
 }
 
 @include for-phone-only {}
@@ -122,6 +145,11 @@ nav {
                 background: #232323;
                 border-radius: 5px;
                 font-size: 1.5rem;
+                cursor: pointer;
+
+                body.light-mode & {
+                    background: #EFEFEF;
+                }
             }
         }
 

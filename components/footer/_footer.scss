@@ -5,6 +5,10 @@ footer {
     background: $footerBg;
     padding: 40px 24px;
 
+    body.light-mode & {
+        background: #F5F5F5;
+    }
+
 
     .grid-box {
         text-align: center;

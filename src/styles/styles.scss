@@ -22,7 +22,18 @@ body {
     font-family: 'Space Grotesk', sans-serif;
     background-color: $bgColor;
     color: #ffffff;
+
+    &.light-mode {
+        @include lightTheme(true)
+    }
+
+    &.light-mode p {
+        color: #000000;
+    }
 }
+
+
+
 
 p {
     color: #BDBDBD;

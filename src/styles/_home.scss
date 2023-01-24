@@ -131,6 +131,11 @@
                                 font-size: 12px;
                                 line-height: 18px;
                                 color: #ffffff;
+
+                                body.light-mode & {
+                                    color: #000000;
+                                }
+
                             }
                         }
                     }
@@ -155,14 +160,26 @@
                                 font-weight: 700;
                                 font-size: 12px;
                                 line-height: 21px;
+
+                                body.light-mode & {
+                                    color: #000000;
+                                }
                             }
 
                             &.grey {
                                 background: #2C2C2C;
+
+                                body.light-mode & {
+                                    background: #F9F9F9;
+                                }
                             }
 
                             &.dark {
                                 background: #1C1C1C;
+
+                                body.light-mode & {
+                                    background: #E4E4E4;
+                                }
                             }
                         }
                     }
