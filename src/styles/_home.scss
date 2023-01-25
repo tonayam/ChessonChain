@@ -1,12 +1,18 @@
 .home {
+    overflow: hidden;
+
     header {
         text-align: center;
         padding: 100px 24px;
-        background: url(../../public/header-bg-mobile.png);
+        background-image: url(../../public/header-bg-mobile.png);
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: 100%;
         margin-bottom: 70px;
+
+        body.light-mode & {
+            background-image: url(../../public/header-bg-mobile-light.svg);
+        }
 
         h1 {
             font-weight: 400;
@@ -195,7 +201,7 @@
             position: relative;
             width: 344.08px;
             height: 123.96px;
-            margin: 30px 0 10px 0;
+            margin: 30px auto 10px auto;
         }
 
         p {
@@ -206,9 +212,138 @@
     }
 }
 
-@include for-phone-only {}
+@include for-phone-only {
+    .home {
+        header {
+            h1 {
+                font-size: 24px;
+            }
 
-@include for-tablet-potrait-up {}
+            p {
+                font-size: 12px;
+            }
+        }
+
+        section {
+            padding: 50px 24px;
+        }
+
+        .the-game,
+        .multi-chain-economy,
+        .tokenomics {
+            .blocks {
+                .block {
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            &.multi-chain-economy {
+                .blocks {
+                    .img {
+                        width: 160.48px;
+                        height: 145px;
+                    }
+                }
+            }
+
+            &.tokenomics {
+                .blocks {
+
+                    .img {
+                        width: 213.88px;
+                        height: 213px;
+                    }
+
+                    .tokens-dist {
+                        .distribution {
+                            h2 {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .nft {
+            .img {
+                width: 267.08px;
+                height: 94.96px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@include for-tablet-potrait-up {
+    .home {
+        header {
+            h1 {
+                width: 70%;
+                margin: auto;
+            }
+
+            p {
+                width: 60%;
+                margin: 30px auto 40px auto;
+            }
+        }
+
+        section {
+            padding: 50px 44px;
+
+            .section-title {
+                font-size: 24px;
+            }
+        }
+
+        .the-game,
+        .multi-chain-economy,
+        .tokenomics {
+
+            .blocks {
+                margin-top: 30px;
+
+                .block {
+                    p {
+                        font-size: 16px;
+                        width: 80%;
+                        margin: auto;
+                    }
+                }
+            }
+
+            &.tokenomics {
+                .blocks {
+                    .tokens-dist {
+                        .chart-data {
+                            .item {
+                                p {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+
+                        .distribution {
+                            .item {
+                                p {
+                                    font-size: 14px;
+                                    margin: 0;
+                                    width: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @include for-tablet-landscape-up {}
 
@@ -216,13 +351,17 @@
     .home {
         header {
             padding: 100px 40px;
-            background: url(../../public/header-bg-desktop.png);
+            background-image: url(../../public/header-bg-desktop.png);
             background-repeat: no-repeat;
             background-position: bottom;
             background-size: 100%;
             width: 95%;
             margin: 0 auto;
             height: 85vh;
+
+            body.light-mode & {
+                background-image: url(../../public/header-bg-desktop-light.svg);
+            }
 
             h1 {
                 width: 700px;
@@ -275,6 +414,8 @@
                     p {
                         font-size: 16px;
                         line-height: 28px;
+                        width: 100%;
+                        margin: 0;
                     }
                 }
             }

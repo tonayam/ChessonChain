@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { gameTypes } from "data/data";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useGlobalContext } from "context/context";
 
 const About = () => {
   return (
@@ -19,7 +20,7 @@ const About = () => {
           features.
         </p>
         <div className='image'>
-          <Image src='/the-game-desktop.png' alt='chessboard' fill />
+          <Image src='/the-game.png' alt='chessboard' fill />
         </div>
         <div className='ellipse left'></div>
         <div className='ellipse right'></div>
@@ -32,13 +33,19 @@ const About = () => {
 };
 
 const Features = () => {
+  const { lightMode } = useGlobalContext();
+
   return (
     <section className='features'>
       <h2 className='section-title'>FEATURES</h2>
       <div className='blocks'>
         <div className='block'>
           <div className='image multichain'>
-            <Image src='/multichain.png' alt='multichain' fill />
+            {lightMode ? (
+              <Image src='/multichain-light.png' alt='multichain' fill />
+            ) : (
+              <Image src='/multichain.png' alt='multichain' fill />
+            )}
           </div>
           <h3>Multi-Chain</h3>
           <p>

@@ -6,9 +6,8 @@ import Link from "next/link";
 import { useGlobalContext } from "context/context";
 
 const Navbar = () => {
-  const { showNavbar, setShowNavbar } = useGlobalContext();
-
-  const [lightMode, setLightMode] = useState(false);
+  const { showNavbar, setShowNavbar, lightMode, setLightMode } =
+    useGlobalContext();
 
   const closeNavbar = () => {
     setShowNavbar(false);

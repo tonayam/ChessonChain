@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { chartData, tokenDistribution } from "data/data";
+import { useGlobalContext } from "context/context";
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ const TheGame = () => {
       <h2 className='section-title'>THE GAME</h2>
       <div className='blocks'>
         <div className='block img'>
-          <Image src='/the-game-desktop.png' alt='chessboard' fill />
+          <Image src='/the-game.png' alt='chessboard' fill />
         </div>
         <div className='block'>
           <p>
@@ -62,6 +63,8 @@ const TheGame = () => {
 };
 
 const MultiChainEconomy = () => {
+  const { lightMode } = useGlobalContext();
+
   return (
     <section className='multi-chain-economy'>
       <h2 className='section-title'>MULTI-CHAIN ECONOMY</h2>
@@ -77,11 +80,19 @@ const MultiChainEconomy = () => {
           </p>
         </div>
         <div className='block img'>
-          <Image
-            src='/multichain-desktop.png'
-            alt='multi-chain-economy diagram'
-            fill
-          />
+          {lightMode ? (
+            <Image
+              src='/multichain-desktop-light.svg'
+              alt='multi-chain-economy diagram'
+              fill
+            />
+          ) : (
+            <Image
+              src='/multichain-desktop.png'
+              alt='multi-chain-economy diagram'
+              fill
+            />
+          )}
         </div>
       </div>
     </section>
@@ -89,11 +100,17 @@ const MultiChainEconomy = () => {
 };
 
 const NFT = () => {
+  const { lightMode } = useGlobalContext();
+
   return (
     <section className='nft'>
       <h2 className='section-title'>NFT</h2>
       <div className='img'>
-        <Image src='/nft.png' alt='nft' fill />
+        {lightMode ? (
+          <Image src='/nft-light.svg' alt='nft' fill />
+        ) : (
+          <Image src='/nft.png' alt='nft' fill />
+        )}
       </div>
       <p>
         The chessOnchain NFTs are the representatives of the world blockchain
@@ -113,7 +130,7 @@ const Tokenomics = () => {
       <h2 className='section-title'>Tokenomics</h2>
       <div className='blocks'>
         <div className='block img'>
-          <Image src='/token-chart.png' alt='token chart' fill />
+          <Image src='/token-chart.svg' alt='token chart' fill />
         </div>
         <div className='block tokens-dist'>
           <div className='chart-data'>
