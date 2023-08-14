@@ -37,3 +37,10 @@
 
     }
 }
+
+@mixin flex($alignItems, $justifyContent, $flexDirection) {
+    display: flex;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+    flex-direction: $flexDirection;
+}

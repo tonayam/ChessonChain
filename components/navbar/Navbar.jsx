@@ -1,81 +1,88 @@
-import React, { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { FiSun } from "react-icons/fi";
-import { BsMoonStars } from "react-icons/bs";
-import Link from "next/link";
-import { useGlobalContext } from "context/context";
+import React, { useEffect, useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import Link from 'next/link';
+import { useGlobalContext } from 'context/context';
+import Image from 'next/image';
 
 const Navbar = () => {
-  const { showNavbar, setShowNavbar, lightMode, setLightMode } =
-    useGlobalContext();
+  const { showNavbar, setShowNavbar } = useGlobalContext();
 
   const closeNavbar = () => {
     setShowNavbar(false);
   };
 
-  useEffect(() => {
-    if (lightMode) {
-      document.body.classList.add(`light-mode`);
-    } else {
-      document.body.classList.remove(`light-mode`);
-    }
-  }, [lightMode]);
-
   return (
     <>
       <nav>
         <Link href='/' className='logo'>
-          ChessonChain
+          <Image src='/logo.png' alt='company logo' fill />
         </Link>
-        <div className='links'>
-          <Link href='/'>Home</Link>
-          <Link href='about'>About</Link>
-          <Link href='contact'>Contact us</Link>
-        </div>
-        <div className='btns'>
-          <a href='#'>
-            <button className='green'>Sign in</button>
-          </a>
-          <a href='#'>Sign up</a>
-          <div className='display-mode'>
-            {lightMode ? (
-              <BsMoonStars onClick={() => setLightMode(false)} />
-            ) : (
-              <FiSun onClick={() => setLightMode(true)} />
-            )}
-          </div>
-        </div>
-        <div className='hambugger-menu'>
-          <div className='display-mode'>
-            {lightMode ? (
-              <BsMoonStars onClick={() => setLightMode(false)} />
-            ) : (
-              <FiSun onClick={() => setLightMode(true)} />
-            )}
-          </div>
+        <div className='hamburger'>
           {showNavbar ? (
             <FaTimes onClick={() => setShowNavbar(false)} />
           ) : (
             <FaBars onClick={() => setShowNavbar(true)} />
           )}
         </div>
+        <div className='links'>
+          <Link href='/'>Game</Link>
+          <Link href='about'>News</Link>
+          <Link href='contact'>Support</Link>
+        </div>
+
+        <div className='socials-waitlist'>
+          <a href='' target='_blank' rel='noreferrer'>
+            <Image
+              src='/twitter-logo.svg'
+              alt='twitter link'
+              width={35}
+              height={34}
+            />
+          </a>
+          <a href='' target='_blank' rel='noreferrer'>
+            <Image
+              src='/discord-logo.svg'
+              alt='discord link'
+              width={50}
+              height={48}
+            />
+          </a>
+          <div className='social'></div>
+          <button className='green'>Join waitlist</button>
+        </div>
       </nav>
 
       <div className={`mobile-links ${showNavbar && `show`}`}>
         <Link href='/' onClick={closeNavbar}>
-          Home
+          Game
         </Link>
         <Link href='about' onClick={closeNavbar}>
-          About
+          News
         </Link>
         <Link href='contact' onClick={closeNavbar}>
-          Contact us
+          Support
         </Link>
-        <div className='btns'>
-          <a href='#'>
-            <button className='green'>Sign in</button>
-          </a>
-          <a href='#'>Sign up</a>
+        <div className='socials-waitlist'>
+          <div className='socials'>
+            <a href='' target='_blank' rel='noreferrer'>
+              <Image
+                src='/twitter-logo.svg'
+                alt='twitter link'
+                width={35}
+                height={34}
+              />
+            </a>
+            <a href='' target='_blank' rel='noreferrer'>
+              <Image
+                src='/discord-logo.svg'
+                alt='discord link'
+                width={50}
+                height={48}
+              />
+            </a>
+          </div>
+          <div className='social'></div>
+          <button className='green'>Join waitlist</button>
         </div>
       </div>
     </>

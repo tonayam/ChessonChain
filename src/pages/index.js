@@ -1,7 +1,8 @@
-import Head from "next/head";
-import Image from "next/image";
-import { chartData, tokenDistribution } from "data/data";
-import { useGlobalContext } from "context/context";
+import Head from 'next/head';
+import Image from 'next/image';
+import { chartData, tokenDistribution } from 'data/data';
+import { useGlobalContext } from 'context/context';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -27,13 +28,16 @@ const Header = () => {
   return (
     <header>
       <div className='ellipse'></div>
-      <h1>P2E MULTI-CHAIN/INTER-CHAIN CHESS GAME</h1>
+      <div className='chessonchain img'>
+        <Image src='/chessonchain-block.png' alt='chess on chain' fill />
+      </div>
+      <h1>The #1 chess integration with the blockchain</h1>
       <p>
         Play and earn in an exciting multi-chain NFT chess game for chess and
         blockchain enthusiasts.
       </p>
       <a href='#'>
-        <button className='green'>Play game</button>
+        <button className='grey'>Join Waitlist</button>
       </a>
     </header>
   );
@@ -79,7 +83,16 @@ const MultiChainEconomy = () => {
             the desired future of the blockchain economy.
           </p>
         </div>
-        <div className='block img'>
+        <motion.div
+          className='block img'
+          animate={{ rotateZ: '360deg' }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            // type: `tween`,
+            ease: 'linear',
+          }}
+        >
           {lightMode ? (
             <Image
               src='/multichain-desktop-light.svg'
@@ -93,7 +106,7 @@ const MultiChainEconomy = () => {
               fill
             />
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
