@@ -62,11 +62,23 @@ nav {
     }
 }
 
-@include for-phone-only {}
+@include for-phone-only {
+    nav {
+        padding: 12px 24px;
+    }
+}
 
-@include for-tablet-potrait-up {}
+@include for-tablet-potrait-up {
+    nav {
+        padding: 12px 40px;
+    }
+}
 
-@include for-tablet-landscape-up {}
+@include for-tablet-landscape-up {
+    nav {
+        padding: 12px 60px;
+    }
+}
 
 @include for-desktop-up {
     nav {
