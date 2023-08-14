@@ -3,7 +3,7 @@
 
     header {
         text-align: center;
-        padding: 40px 24px;
+        padding: 80px 24px;
         background-image: url(../../public/header-bg-mobile.png);
         background-repeat: no-repeat;
         background-position: bottom;
@@ -110,94 +110,6 @@
                 }
             }
         }
-
-        &.tokenomics {
-            .blocks {
-
-                .img {
-                    position: relative;
-                    width: 255.88px;
-                    height: 256px;
-                }
-
-                .tokens-dist {
-                    display: flex;
-                    flex-direction: column;
-                    text-align: start;
-
-                    .chart-data {
-
-                        .item {
-                            display: flex;
-                            align-items: center;
-                            margin: 15px 0;
-
-                            .color {
-                                min-width: 20px;
-                                height: 20px;
-                                margin-right: 10px;
-                            }
-
-                            p {
-                                font-weight: 700;
-                                font-size: 12px;
-                                line-height: 18px;
-                                color: #ffffff;
-
-                                body.light-mode & {
-                                    color: #000000;
-                                }
-
-                            }
-                        }
-                    }
-
-                    .distribution {
-                        margin-top: 20px;
-
-                        h2 {
-                            font-weight: 700;
-                            font-size: 18px;
-                            line-height: 23px;
-                            margin-bottom: 20px;
-                        }
-
-                        .item {
-                            display: flex;
-                            justify-content: space-between;
-                            padding: 0 10px;
-
-                            p {
-                                color: #ffffff;
-                                font-weight: 700;
-                                font-size: 12px;
-                                line-height: 21px;
-
-                                body.light-mode & {
-                                    color: #000000;
-                                }
-                            }
-
-                            &.grey {
-                                background: #2C2C2C;
-
-                                body.light-mode & {
-                                    background: #F9F9F9;
-                                }
-                            }
-
-                            &.dark {
-                                background: #1C1C1C;
-
-                                body.light-mode & {
-                                    background: #E4E4E4;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 
     .nft {
@@ -250,24 +162,6 @@
                     .img {
                         width: 160.48px;
                         height: 145px;
-                    }
-                }
-            }
-
-            &.tokenomics {
-                .blocks {
-
-                    .img {
-                        width: 213.88px;
-                        height: 213px;
-                    }
-
-                    .tokens-dist {
-                        .distribution {
-                            h2 {
-                                font-size: 14px;
-                            }
-                        }
                     }
                 }
             }
@@ -445,44 +339,6 @@
                     }
                 }
             }
-
-            &.tokenomics {
-                .blocks {
-                    .img {
-                        width: 440.47px;
-                        height: 440.67px;
-                    }
-
-                    .tokens-dist {
-                        .chart-data {
-                            .item {
-                                .color {
-                                    margin-right: 20px;
-                                }
-
-                                p {
-                                    font-size: 14px;
-                                    line-height: 30px;
-                                }
-                            }
-                        }
-
-                        .distribution {
-                            h2 {
-                                font-size: 32px;
-                                line-height: 41px;
-                            }
-
-                            .item {
-                                p {
-                                    font-size: 14px;
-                                    line-height: 30px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
 
         .nft {
@@ -507,7 +363,7 @@
                 width: 479px;
                 height: 479px;
                 top: 140px;
-                background: $primaryColor;
+                background: #fff;
                 opacity: 0.2;
                 filter: blur(150px);
 

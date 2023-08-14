@@ -1,40 +1,27 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
     <footer>
-      <div className='grid-box first-box'>
-        <h2 className='chessonchain'>ChessOnChain</h2>
-        <p>
-          Play and earn in an exciting multi-chain NFT chess game for chess and
-          blockchain enthusiasts.
-        </p>
-      </div>
-      <div className='grid-box'>
-        <h2>Quick Links</h2>
-        <ul>
-          <li>
-            <Link href='/'>Home</Link>
-          </li>
-          <li>
-            <Link href='about'>About</Link>
-          </li>
-          <li>
-            <Link href='contact'>Contact Us</Link>
-          </li>
-        </ul>
-      </div>
-      <div className='grid-box'>
-        <h2>Social Media</h2>
-        <ul>
-          <li>
-            <a href='#'>Discord</a>
-          </li>
-          <li>
-            <a href='#'>Twitter</a>
-          </li>
-        </ul>
+      <h4 className='chessonchain'>Support | Chessonchain © 2023 | About</h4>
+      <div className='socials'>
+        <a href='' target='_blank' rel='noreferrer'>
+          <Image
+            src='/twitter-logo.svg'
+            alt='twitter link'
+            width={35}
+            height={34}
+          />
+        </a>
+        <a href='' target='_blank' rel='noreferrer'>
+          <Image
+            src='/discord-logo.svg'
+            alt='discord link'
+            width={50}
+            height={48}
+          />
+        </a>
       </div>
     </footer>
   );

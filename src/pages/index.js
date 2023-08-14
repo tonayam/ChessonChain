@@ -18,7 +18,6 @@ export default function Home() {
         <TheGame />
         <MultiChainEconomy />
         <NFT />
-        <Tokenomics />
       </main>
     </>
   );
@@ -133,45 +132,6 @@ const NFT = () => {
       </p>
       <div className='ellipse left'></div>
       <div className='ellipse right'></div>
-    </section>
-  );
-};
-
-const Tokenomics = () => {
-  return (
-    <section className='tokenomics'>
-      <h2 className='section-title'>Tokenomics</h2>
-      <div className='blocks'>
-        <div className='block img'>
-          <Image src='/token-chart.svg' alt='token chart' fill />
-        </div>
-        <div className='block tokens-dist'>
-          <div className='chart-data'>
-            {chartData.map((item, index) => {
-              return (
-                <div className='item' key={index}>
-                  <div
-                    className='color'
-                    style={{ background: item.color }}
-                  ></div>
-                  <p>{item.text}</p>
-                </div>
-              );
-            })}
-          </div>
-          <div className='distribution'>
-            <h2>TOKEN DISTRIBUTION</h2>
-            {tokenDistribution.map((token, index) => {
-              return (
-                <div className={`item ${token.class}`} key={index}>
-                  <p>{token.title}</p>
-                  <p>{token.num.toLocaleString(`en-US`)}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

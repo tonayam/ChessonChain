@@ -1,0 +1,14 @@
+.waitlist-page {
+    border: 2px solid red;
+    @include flex(center, flex-start, column)
+}
+
+@include for-phone-only {}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {}
+
+@include for-big-desktop-up {}
