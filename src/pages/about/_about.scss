@@ -1,19 +1,15 @@
 .about {
-    padding: 80px 24px;
+    padding: 80px 14px;
     position: relative;
     overflow: hidden;
 
     .section-title {
         font-weight: 700;
-        font-size: 18px;
+        font-size: clamp(1.1rem, 4vw, 1.8rem);
         line-height: 23px;
         text-align: center;
         color: #FFFFFF;
         margin-bottom: 40px;
-
-        body.light-mode & {
-            color: #000000;
-        }
     }
 
     header {
@@ -21,15 +17,15 @@
 
         h1 {
             font-weight: 400;
-            font-size: 32px;
+            font-size: clamp(3rem, 6vw, 6rem);
             line-height: 28px;
         }
 
         p {
             font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
+            line-height: 32px;
             margin-top: 30px;
+            font-size: clamp(1rem, 5vw, 1.3rem);
         }
 
         .image {
@@ -38,208 +34,149 @@
             height: 171px;
             margin: 30px auto 0 auto;
         }
-
-        .ellipse {
-            position: absolute;
-            width: 223px;
-            height: 223px;
-            background: $primaryColor;
-            opacity: 0.07;
-            filter: blur(50px);
-            z-index: -8;
-
-            &.left {
-                left: -46px;
-                top: 112px;
-            }
-
-            &.right {
-                left: 234px;
-                top: 477px;
-            }
-        }
     }
 
-    .features {
-        margin-top: 100px;
+    .row {
+        @include flex(flex-start, center, column);
 
-        .blocks {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-gap: 20px;
+        .features {
+            margin-top: 100px;
 
             .block {
                 text-align: center;
                 margin: 30px 0;
+                margin-bottom: 4rem;
 
-                .image {
-                    position: relative;
-                    margin: auto;
+                .title-img {
+                    @include flex(center, center, column-reverse);
+                    margin-bottom: 1rem;
 
-                    &.multichain {
-                        width: 77.94px;
-                        height: 60px;
+                    h3 {
+                        font-weight: 700;
+                        font-size: clamp(0.9rem, 3vw, 2rem);
+                        line-height: 23px;
+                        margin: 20px 0 10px 0;
                     }
 
-                    &.token {
-                        width: 74px;
-                        height: 81px;
-                    }
+                    .img {
+                        &.multichain {
+                            width: 77.94px;
+                            height: 60px;
+                        }
 
-                }
-
-                h3 {
-                    font-weight: 700;
-                    font-size: 18px;
-                    line-height: 23px;
-                    margin: 20px 0;
-                }
-
-                p {
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 24px;
-
-                    body.light-mode & {
-                        color: #000000;
-                    }
-                }
-            }
-
-        }
-    }
-
-    .game-types {
-        margin-top: 100px;
-
-        .games {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-top: 30px;
-
-
-            .game {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                opacity: 0;
-                transition: 0.3s linear all;
-
-                h3 {
-                    font-weight: 700;
-                    font-size: 16px;
-                    line-height: 20px;
-                    color: #FFFFFF;
-
-                    body.light-mode & {
-                        color: #000000;
-                    }
-
-                }
-
-                .image {
-                    position: relative;
-                    height: 22px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin: 12px 0;
-
-                    &.oneVone,
-                    &.interchain,
-                    &.target {
-                        width: 23px;
-                    }
-
-                    &.random-selector,
-                    &.bughouse {
-                        width: 50.9px;
-                    }
-
-                    &.speed-chess {
-                        width: 17.89px;
-                    }
-                }
-
-                p {
-                    font-weight: 400;
-                    font-size: 12px;
-                    line-height: 20px;
-                    color: #FFFFFF;
-                    text-align: center;
-
-                    body.light-mode & {
-                        color: #000000;
-                    }
-                }
-
-                &.activeSlide {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-
-                &.nextSlide {
-                    transform: translateX(100%);
-                }
-
-                &.prevSlide {
-                    transform: translateX(-100%);
-                }
-
-            }
-
-            .pagination {
-                position: absolute;
-                bottom: 10px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-
-                .box {
-                    width: 7.68px;
-                    height: 7.68px;
-                    margin: 0 10px;
-                    background: #535353;
-
-                    &.activeSlide {
-                        background: #FFFFFF;
-
-                        body.light-mode & {
-                            background-color: $primaryColor;
+                        &.token {
+                            width: 74px;
+                            height: 81px;
                         }
                     }
                 }
-            }
 
-            .btn {
-                font-size: 1.5rem;
-                color: $primaryColor;
-                position: absolute;
-                top: 30px;
-
-                &.left-btn {
-                    left: 2px;
+                p {
+                    font-weight: 400;
+                    font-size: clamp(0.9rem, 3vw, 1.1rem);
+                    line-height: 24px;
                 }
 
-                &.right-btn {
-                    right: 2px;
+                .line {
+                    width: 12.8125rem;
+                    height: 0.0625rem;
+                    background: #FFF;
+                    margin-top: 1rem;
+                    margin: 1rem auto 0 auto;
                 }
-
             }
         }
 
+        .game-mode {
+            margin-top: 70px;
+            width: 100%;
+
+            h2.section-title {
+                margin-bottom: 1rem
+            }
+
+            .lines {
+                @include flex(center, flex-start, row);
+                width: 80%;
+                margin: 0 auto 2rem auto;
+
+                .short {
+                    width: 30%;
+                    height: 0.1rem;
+                    background-color: #fff;
+                    margin-right: 1rem;
+                }
+
+                .long {
+                    width: 70%;
+                    height: 0.1rem;
+                    background: #828282;
+                }
+            }
+
+            .new-era {
+                @include flex(center, center, column);
+                padding: 3rem 14px 1rem 14px;
+                background-image: url('../../../public/new-chess-era-bg.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 0.5rem;
+                border: 1px solid #C2C2C2;
+                margin-bottom: 1rem;
+
+                .img {
+                    width: 4.25rem;
+                    height: 4.25rem;
+                    margin-bottom: 1rem;
+                }
+
+                h5 {
+                    @include flex(center, center, column);
+                    font-size: clamp(1rem, 4vw, 1.5rem);
+                }
+            }
+
+
+            h3.blockchain-era {
+                @include flex(flex-start, center, column);
+                font-size: clamp(1.4rem, 8vw, 1.8rem);
+                margin-bottom: 1rem;
+            }
+
+            .game {
+                width: 100%;
+                @include flex(center, center, column);
+                transition: 0.3s linear all;
+                border-top: 0.06rem solid #515151;
+                padding: 1rem 0;
+                text-align: center;
+
+                .img {
+                    margin-bottom: 1rem;
+                }
+
+                .info {
+                    h3 {
+                        font-weight: 700;
+                        font-size: clamp(1rem, 4vw, 1.4rem);
+                        line-height: 20px;
+                        color: #FFFFFF;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: clamp(0.9rem, 3vw, 1rem);
+                        line-height: 28px;
+                        color: #FFFFFF;
+                        text-align: center;
+                    }
+                }
+            }
+        }
     }
+
 
     .the-team {
         margin-top: 100px;
@@ -281,60 +218,33 @@
             }
         }
     }
+
+    .join-waitlist {
+        margin-top: 4rem;
+        @include flex(center, center, column);
+        text-align: center;
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: clamp(0.8rem, 4vw, 1rem);
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 
 @include for-phone-only {
     .about {
-        padding: 80px 16px;
-
-        .section-title {
-            margin-bottom: 20px;
-        }
+        padding: 80px 24px;
 
         header {
-            p {
-                font-size: 12px;
-            }
-
             .image {
                 width: 210px;
                 height: 138px;
-            }
-        }
-
-        .features {
-            .blocks {
-                .block {
-                    p {
-                        font-size: 12px;
-                    }
-                }
-
-            }
-        }
-
-        .game-types {
-            .games {
-                .game {
-                    h3 {
-                        font-size: 14px;
-                    }
-                }
-            }
-
-        }
-
-        .the-team {
-            margin-top: 100px;
-
-            .section-title {
-                color: #FFFFFF;
-            }
-
-            .team-members {
-                grid-template-columns: repeat(1, 160px);
-                justify-content: center;
             }
         }
     }
@@ -343,19 +253,6 @@
 @include for-tablet-potrait-up {
     .about {
         padding: 80px 40px;
-
-        .section-title {
-            font-size: 32px;
-        }
-
-        header {
-            p {
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 24px;
-                margin-top: 30px;
-            }
-        }
 
         .game-types {
             .games {
@@ -372,12 +269,11 @@
                     }
                 }
             }
-
         }
 
-        .the-team {
-            .team-members {
-                grid-template-columns: repeat(3, 1fr);
+        .join-waitlist {
+            p {
+                width: 55%;
             }
         }
     }
@@ -389,203 +285,100 @@
     .about {
         padding: 60px 80px;
 
-        .section-title {
-            font-size: 32px;
-            line-height: 41px;
-        }
-
         header {
-
-            h1 {
-                font-size: 48px;
-                line-height: 61px;
-            }
-
-            p {
-                line-height: 28px;
-                color: #FFFFFF;
-                width: 987px;
-                margin: auto;
-            }
+            margin-bottom: 10rem;
 
             .image {
                 width: 499px;
                 height: 336px;
             }
 
-            .ellipse {
-                width: 479px;
-                height: 479px;
-                opacity: 0.2;
-                filter: blur(150px);
-
-                &.left {
-                    left: -240px;
-                    top: 200px;
-                }
-
-                &.right {
-                    left: 1200px;
-                    top: 200px;
-                }
-            }
         }
 
-        .features {
-            position: relative;
+        .row {
+            @include flex(flex-start, space-between, row);
 
-            .blocks {
-                grid-template-columns: repeat(2, 1fr);
-                margin-top: 80px;
+            .features {
+                position: relative;
+                width: 55%;
+                margin-top: 0;
+                margin-right: 2rem;
 
                 .block {
                     text-align: start;
-                    margin: 0;
+                    margin: 0 0 30px 0;
+                    margin-bottom: 4rem;
+                    @include flex(flex-start, center, column-reverse);
+                    border-radius: 0.5rem;
+                    border: 1px solid #C2C2C2;
+                    background: linear-gradient(179deg, #000 0%, rgba(140, 140, 140, 0.00) 90.54%);
+                    padding: 2.8rem 2.3rem;
 
-                    .image {
-                        margin: 0;
+                    .title-img {
+                        @include flex(center, space-between, row);
+                        margin-bottom: 1rem;
+                        width: 100%;
 
-                        &.multichain {
-                            width: 119.51px;
-                            height: 92px;
+
+                        h3 {
+                            font-size: clamp(0.9rem, 3vw, 2rem);
+                            border-bottom: 2px solid #fff;
+                            padding-bottom: 1rem;
+                            padding-right: 2rem;
                         }
-
-                        &.token {
-                            width: 84px;
-                            height: 92px;
-                        }
-                    }
-
-                    h3 {
-                        font-size: 32px;
-                        line-height: 41px;
                     }
 
                     p {
-                        line-height: 28px;
-                        color: #FFFFFF;
+                        width: 75%;
                     }
 
-                    &:last-child {
-                        margin-left: 30px;
+                    .line {
+                        display: none;
                     }
                 }
             }
 
-            .ellipse {
-                position: absolute;
-                background: $primaryColor;
-                filter: blur(150px);
-                opacity: 0.07;
+            .game-mode {
+                margin-top: 0;
+                width: 45%;
 
-                &.left {
-                    width: 245px;
-                    height: 245px;
-                    left: 309px;
-                    top: 100px;
+                h3.blockchain-era {
+                    @include flex(flex-start, center, column);
+                    font-size: clamp(1.4rem, 8vw, 1.8rem);
+                    margin-bottom: 1rem;
                 }
-
-                &.right {
-                    width: 458px;
-                    height: 458px;
-                    right: -200px;
-                    top: 100px;
-                }
-            }
-        }
-
-        .game-types {
-            .games {
-                width: 80%;
-                margin: 30px auto 0 auto;
 
                 .game {
-                    h3 {
-                        font-size: 24px;
-                        line-height: 41px;
-                    }
+                    width: 100%;
+                    @include flex(center, space-between, row);
+                    border-top: 0.06rem solid #515151;
+                    padding: 1rem 0;
+                    text-align: center;
 
-                    .image {
-                        margin: 15px 0;
-                        height: 40px;
+                    .info {
+                        width: 70%;
+                        text-align: start;
 
-                        &.oneVone,
-                        &.interchain,
-                        &.target {
-                            width: 41.63px;
+                        h3 {
+                            font-weight: 700;
+                            font-size: clamp(1rem, 4vw, 1.4rem);
+                            line-height: 20px;
+                            color: #FFFFFF;
+                            margin-bottom: 0.5rem;
                         }
 
-                        &.random-selector,
-                        &.bughouse {
-                            width: 89px;
-                        }
-
-                        &.speed-chess {
-                            width: 31.29px;
+                        p {
+                            text-align: start;
                         }
                     }
-
-                    p {
-                        font-size: 16px;
-                        line-height: 28px;
-                        padding: 0 64px;
-                    }
-                }
-
-                .btn {
-                    top: 120px;
                 }
             }
-
         }
 
-        .the-team {
-            position: relative;
 
-            .team-members {
-                grid-template-columns: repeat(3, 1fr);
-                margin-top: 64px;
-
-                .member {
-                    .image {
-                        width: 320px;
-                        height: 320px;
-                    }
-
-                    h3 {
-                        width: 320px;
-                        margin: 40px 0 20px 0;
-                    }
-
-                    h4 {
-                        width: 215px;
-                    }
-                }
-            }
-
-            .ellipse {
-                position: absolute;
-                width: 491px;
-                height: 491px;
-
-                background: $primaryColor;
-                opacity: 0.07;
-                filter: blur(150px);
-
-                &.one {
-                    left: -142px;
-                    top: 10px;
-                }
-
-                &.two {
-                    left: 822px;
-                    top: 400px;
-                }
-
-                &.three {
-                    left: 185px;
-                    top: 600px;
-                }
+        .join-waitlist {
+            p {
+                width: 35%;
             }
         }
     }

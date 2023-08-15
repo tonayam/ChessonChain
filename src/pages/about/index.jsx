@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { gameTypes } from "data/data";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useGlobalContext } from "context/context";
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { gameTypes } from 'data/data';
+import Link from 'next/link';
 
 const About = () => {
   return (
@@ -25,149 +24,143 @@ const About = () => {
         <div className='ellipse left'></div>
         <div className='ellipse right'></div>
       </header>
-      <Features />
-      <GameTypes />
-      <TheTeam />
+      <div className='row'>
+        <Features />
+        <GameTypes />
+      </div>
+      <JoinWaitlistNow />
     </main>
   );
 };
 
 const Features = () => {
-  const { lightMode } = useGlobalContext();
-
   return (
     <section className='features'>
       <h2 className='section-title'>FEATURES</h2>
-      <div className='blocks'>
-        <div className='block'>
-          <div className='image multichain'>
-            {lightMode ? (
-              <Image src='/multichain-light.png' alt='multichain' fill />
-            ) : (
-              <Image src='/multichain.png' alt='multichain' fill />
-            )}
-          </div>
+      <div className='block'>
+        <div className='title-img'>
           <h3>Multi-Chain</h3>
-          <p>
-            ChessOnChain is a multi-blockchain game, it&apos;s gameplay is
-            designed to connect and enable connectivity of multiple blockchains,
-            so far we&apos;re integrating Stacks, Solana, and Near and anchoring
-            it all to an independent chain (substrate chain).
-          </p>
-        </div>
-        <div className='block'>
-          <div className='image token'>
-            <Image src='/token.png' alt='multichain' fill />
+          <div className='img multichain'>
+            <Image src='/multichain.png' alt='multichain' fill />
           </div>
-          <h3>Tokenized Gameplay</h3>
-          <p>
-            ChessOnchain is a tokenized chess game. Game data is tokenized for
-            better recording and use case. Data like checkmate screenshots for
-            NFT, game moves, and Special game types like Blockwars are tokenized
-            for storage (intended cross-chain battle feature with IBC) tokens
-            will be used to create good utility and use case token data types
-            NFTs.
-          </p>
         </div>
+        <p>
+          ChessOnChain is a multi-blockchain game, it&apos;s gameplay is
+          designed to connect and enable connectivity of multiple blockchains,
+          so far we&apos;re integrating Stacks, Solana, and Near and anchoring
+          it all to an independent chain (substrate chain).
+        </p>
+        <div className='line'></div>
       </div>
-      <div className='ellipse left'></div>
-      <div className='ellipse right'></div>
+      <div className='block'>
+        <div className='title-img'>
+          <h3>Tokenized Gameplay</h3>
+          <div className='img token'>
+            <Image src='/token.png' alt='token' fill />
+          </div>
+        </div>
+        <p>
+          “ChessOnchain is a tokenized chess game. Game data is tokenized for
+          better recording and use case. Data like checkmate screenshots for
+          NFT, game moves, and Special game types like Blockwars are tokenized
+          for storage (intended cross-chain battle feature with IBC) tokens will
+          be used to create good utility and use case token data types NFTs.”
+        </p>
+        <div className='line'></div>
+      </div>
     </section>
   );
 };
 
 const GameTypes = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (index < 0) {
-      setIndex(gameTypes.length - 1);
-    }
-    if (index > gameTypes.length - 1) {
-      setIndex(0);
-    }
-  }, [index]);
-
   return (
-    <section className='game-types'>
-      <h2 className='section-title'>GAME TYPES</h2>
+    <section className='game-mode'>
+      <h2 className='section-title'>GAME MODE</h2>
+      <div className='lines'>
+        <div className='short'></div>
+        <div className='long'></div>
+      </div>
+
+      <div className='new-era'>
+        <div className='img'>
+          <Image src='/new-chess-era-piece.png' alt='new era chess' fill />
+        </div>
+        <h5>
+          <span>A NEW ERA OF</span>
+          <span>CHESS</span>
+        </h5>
+      </div>
+
+      <h3 className='blockchain-era'>
+        <span>THE BLOCKCHAIN ERA</span>
+        <span>OF CHESS.</span>
+        <span>#CHESSONCHAIN</span>
+      </h3>
+
       <div className='games'>
         {gameTypes.map((game, gameIndex) => {
-          let position = `nextSlide`;
-          if (gameIndex === index) {
-            position = "activeSlide";
-          }
-          if (
-            gameIndex === index - 1 ||
-            (index === 0 && gameIndex === gameTypes.length - 1)
-          ) {
-            position = `prevSLide`;
-          }
-
-          const { gameType, icon, info, widthClass } = game;
+          const { gameType, icon, info, iconHeight, iconWidth } = game;
           return (
-            <div className={`game ${position}`} key={gameIndex}>
-              <h3>{gameType}</h3>
-              <div className={`image ${widthClass}`}>
-                <Image src={icon} fill alt={gameType} />
+            <div className='game' key={gameIndex}>
+              <div className='img'>
+                <Image
+                  src={icon}
+                  width={iconWidth}
+                  height={iconHeight}
+                  alt={gameType}
+                />
               </div>
-              <p>{info}</p>
+              <div className='info'>
+                <h3>{gameType}</h3>
+                <p>{info}</p>
+              </div>
             </div>
           );
         })}
-        <div className='pagination'>
-          {gameTypes.map((box, gameIndex) => {
-            let position = ``;
-            if (gameIndex === index) {
-              position = "activeSlide";
-            }
-
-            return (
-              <div
-                className={`box ${position}`}
-                key={gameIndex}
-                onClick={() => setIndex(gameIndex)}
-              ></div>
-            );
-          })}
-        </div>
-        <FaChevronLeft
-          className='btn left-btn'
-          onClick={() => setIndex(index - 1)}
-        />
-        <FaChevronRight
-          className='btn right-btn'
-          onClick={() => setIndex(index + 1)}
-        />
       </div>
     </section>
   );
 };
 
-const TheTeam = () => {
+// const TheTeam = () => {
+//   return (
+//     <section className='the-team'>
+//       <h2 className='section-title'>THE TEAM</h2>
+//       <div className='team-members'>
+//         <div className='member'>
+//           <div className='image'></div>
+//           <h3>Name</h3>
+//           <h4>Role</h4>
+//         </div>
+//         <div className='member'>
+//           <div className='image'></div>
+//           <h3>Name</h3>
+//           <h4>Role</h4>
+//         </div>
+//         <div className='member'>
+//           <div className='image'></div>
+//           <h3>Name</h3>
+//           <h4>Role</h4>
+//         </div>
+//       </div>
+//       <div className='ellipse one'></div>
+//       <div className='ellipse two'></div>
+//       <div className='ellipse three'></div>
+//     </section>
+//   );
+// };
+
+const JoinWaitlistNow = () => {
   return (
-    <section className='the-team'>
-      <h2 className='section-title'>THE TEAM</h2>
-      <div className='team-members'>
-        <div className='member'>
-          <div className='image'></div>
-          <h3>Name</h3>
-          <h4>Role</h4>
-        </div>
-        <div className='member'>
-          <div className='image'></div>
-          <h3>Name</h3>
-          <h4>Role</h4>
-        </div>
-        <div className='member'>
-          <div className='image'></div>
-          <h3>Name</h3>
-          <h4>Role</h4>
-        </div>
-      </div>
-      <div className='ellipse one'></div>
-      <div className='ellipse two'></div>
-      <div className='ellipse three'></div>
+    <section className='join-waitlist'>
+      <h2>Join Waitlist Now!!!</h2>
+      <p>
+        Play and earn in an exciting multi-chain NFT chess game for chess and
+        blockchain enthusiasts.
+      </p>
+      <button className='green'>
+        <Link href='/waitlist'>Join Waitlist</Link>
+      </button>
     </section>
   );
 };

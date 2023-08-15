@@ -1,9 +1,9 @@
-import oneVone from "../public/1v1.png";
-import randomSelector from "../public/random-selector.png";
-import speedChess from "../public/speed-game.png";
-import interChain from "../public/interchain.png";
-import targetChallenge from "../public/target-challenge.png";
-import bugHouse from "../public/bughouse.png";
+import oneVone from '../public/1v1.png';
+import randomSelector from '../public/random-selector.png';
+import speedChess from '../public/speed-game.png';
+import interChain from '../public/interchain.png';
+import targetChallenge from '../public/target-challenge.png';
+import bugHouse from '../public/bughouse.png';
 
 export const chartData = [
   { color: `#4574C6`, text: `Validator` },
@@ -18,52 +18,47 @@ export const chartData = [
   { color: `#274579`, text: `For chess institutions` },
 ];
 
-export const tokenDistribution = [
-  { title: `Total Supply`, num: 10000000000, class: `grey` },
-  { title: `Validator`, num: 3000000000, class: `dark` },
-  { title: `Token sale`, num: 1500000000, class: `grey` },
-  { title: `Reward for users`, num: 1500000000, class: `dark` },
-  { title: `For marketing`, num: 1000000000, class: `grey` },
-  { title: `Reward to team`, num: 2000000000, class: `dark` },
-  { title: `To airdrop`, num: 500000000, class: `grey` },
-  { title: `To chess institution`, num: 500000000, class: `dark` },
-];
-
 export const gameTypes = [
   {
     gameType: `1 V 1`,
     icon: oneVone,
+    iconWidth: 78.369,
+    iconHeight: 62.459,
     info: `You can play with a friend you know.`,
-    widthClass: `oneVone`,
   },
   {
     gameType: `RANDOM SELECTOR`,
     icon: randomSelector,
+    iconWidth: 101.001,
+    iconHeight: 45.394,
     info: `Using random selector you're matched with people available to play at that time on the random match function.`,
-    widthClass: `random-selector`,
   },
   {
-    gameType: `SPEED OR CLOCK CHESS`,
+    gameType: `Speed Up`,
     icon: speedChess,
-    info: `A clock with the same time for both users, which runs down as they take their turns. Once they move, the other players clock begins to run down, and so on. This is popular in bughouse but also in friendly competition, and it is frequently used in chess tournaments to prevent delays. Maximum time on a clock should be 12 hours, minimum 5 minutes (ideally a clock match could be it's own type of match or a clock could be applied to interchain, challenge, random, or 1v1 modes)`,
-    widthClass: `speed-chess`,
+    iconWidth: 45.496,
+    iconHeight: 58,
+    info: `A clock with the same time for both users, which runs down as they take their turns.`,
   },
   {
     gameType: `INTERCHAIN`,
     icon: interChain,
+    iconWidth: 67.302,
+    iconHeight: 64,
     info: `BLOCK WARS playing interchain, you either use the random selector or join routinely made competitions for special token types (block wars)`,
-    widthClass: `interchain`,
   },
   {
     gameType: `TARGET/CHALLENGE`,
     icon: targetChallenge,
+    iconWidth: 50,
+    iconHeight: 50,
     info: `Identify another user by public key and challenge them to a game`,
-    widthClass: `target`,
   },
   {
     gameType: `BUGHOUSE`,
     icon: bugHouse,
+    iconWidth: 90,
+    iconHeight: 40,
     info: `A chess variant played on two chessboards by four players in teams of two, Normal chess rules apply, except that captured pieces on one board are passed on to the teammate on the other board`,
-    widthClass: `bughouse`,
   },
 ];
