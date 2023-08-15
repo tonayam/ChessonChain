@@ -85,7 +85,9 @@ const Navbar = () => {
             </a>
           </div>
           <div className='social'></div>
-          <button className='green'>Join waitlist</button>
+          <button className='green'>
+            <Link href='/waitlist'>Join waitlist</Link>
+          </button>
         </div>
       </div>
     </>
