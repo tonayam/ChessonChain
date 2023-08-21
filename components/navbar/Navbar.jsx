@@ -90,7 +90,7 @@ const Navbar = () => {
             </a>
           </div>
           <div className='social'></div>
-          <button className='green'>
+          <button className='green' onClick={() => setShowNavbar(false)}>
             <Link href='/waitlist'>Join waitlist</Link>
           </button>
         </div>

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { chartData, tokenDistribution } from 'data/data';
 import { useGlobalContext } from 'context/context';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -35,9 +36,11 @@ const Header = () => {
         Play and earn in an exciting multi-chain NFT chess game for chess and
         blockchain enthusiasts.
       </p>
-      <a href='#'>
-        <button className='grey'>Join Waitlist</button>
-      </a>
+      <div className='btn'>
+        <button className='grey'>
+          <Link href='/waitlist'>Join Waitlist</Link>
+        </button>
+      </div>
     </header>
   );
 };

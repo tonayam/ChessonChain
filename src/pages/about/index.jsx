@@ -122,34 +122,6 @@ const GameTypes = () => {
   );
 };
 
-// const TheTeam = () => {
-//   return (
-//     <section className='the-team'>
-//       <h2 className='section-title'>THE TEAM</h2>
-//       <div className='team-members'>
-//         <div className='member'>
-//           <div className='image'></div>
-//           <h3>Name</h3>
-//           <h4>Role</h4>
-//         </div>
-//         <div className='member'>
-//           <div className='image'></div>
-//           <h3>Name</h3>
-//           <h4>Role</h4>
-//         </div>
-//         <div className='member'>
-//           <div className='image'></div>
-//           <h3>Name</h3>
-//           <h4>Role</h4>
-//         </div>
-//       </div>
-//       <div className='ellipse one'></div>
-//       <div className='ellipse two'></div>
-//       <div className='ellipse three'></div>
-//     </section>
-//   );
-// };
-
 const JoinWaitlistNow = () => {
   return (
     <section className='join-waitlist'>

@@ -1,382 +1,385 @@
 .home {
-    overflow: hidden;
+  overflow: hidden;
 
-    header {
+  header {
+    text-align: center;
+    padding: 80px 24px;
+    background-image: url(../../public/header-bg-mobile.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    margin-bottom: 70px;
+
+    body.light-mode & {
+      background-image: url(../../public/header-bg-mobile-light.svg);
+    }
+
+    .chessonchain.img {
+      width: 72px;
+      height: 32px;
+      margin: 1rem auto;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 30px 0 40px 0;
+    }
+
+    .btn {
+      @include flex(center, center, row);
+    }
+
+    .ellipse {
+      z-index: -9;
+      height: 193px;
+      width: 193px;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      background: #22c55e;
+      opacity: 0.1;
+      filter: blur(50px);
+    }
+  }
+
+  section {
+    padding: 50px 24px;
+
+    .section-title {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      text-align: center;
+      color: $primaryColor;
+      text-transform: uppercase;
+    }
+  }
+
+  .the-game,
+  .multi-chain-economy,
+  .tokenomics {
+    .blocks {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 10px;
+      justify-items: center;
+
+      .block {
+        margin: 20px 0;
         text-align: center;
-        padding: 80px 24px;
-        background-image: url(../../public/header-bg-mobile.png);
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: 100%;
-        margin-bottom: 70px;
-
-        body.light-mode & {
-            background-image: url(../../public/header-bg-mobile-light.svg);
-        }
-
-        .chessonchain.img {
-            width: 72px;
-            height: 32px;
-            margin: 1rem auto;
-        }
-
-        h1 {
-            font-weight: 400;
-            font-size: 32px;
-            line-height: 40px;
-        }
 
         p {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-            margin: 30px 0 40px 0;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
         }
 
-        .ellipse {
-            z-index: -9;
-            height: 193px;
-            width: 193px;
-            position: absolute;
-            top: 100px;
-            left: 100px;
-            background: #22C55E;
-            opacity: 0.1;
-            filter: blur(50px);
-
+        button {
+          margin-top: 40px;
         }
+      }
+    }
+
+    &.the-game {
+      .blocks {
+        .img {
+          position: relative;
+          width: 256px;
+          min-height: 171px;
+        }
+      }
+    }
+
+    &.multi-chain-economy {
+      .blocks {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+
+        .img {
+          position: relative;
+          width: 185.48px;
+          height: 168px;
+        }
+      }
+    }
+  }
+
+  .nft {
+    text-align: center;
+
+    .img {
+      position: relative;
+      width: 344.08px;
+      height: 123.96px;
+      margin: 30px auto 10px auto;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+@include for-phone-only {
+  .home {
+    header {
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 12px;
+      }
     }
 
     section {
-        padding: 50px 24px;
-
-        .section-title {
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 23px;
-            text-align: center;
-            color: $primaryColor;
-            text-transform: uppercase;
-        }
+      padding: 50px 24px;
     }
 
     .the-game,
     .multi-chain-economy,
     .tokenomics {
+      .blocks {
+        .block {
+          p {
+            font-size: 12px;
+          }
+        }
+      }
 
+      &.multi-chain-economy {
         .blocks {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-gap: 10px;
-            justify-items: center;
-
-            .block {
-                margin: 20px 0;
-                text-align: center;
-
-                p {
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 20px;
-                }
-
-                button {
-                    margin-top: 40px;
-                }
-            }
+          .img {
+            width: 160.48px;
+            height: 145px;
+          }
         }
-
-        &.the-game {
-            .blocks {
-                .img {
-                    position: relative;
-                    width: 256px;
-                    min-height: 171px;
-                }
-            }
-        }
-
-        &.multi-chain-economy {
-            .blocks {
-                display: flex;
-                flex-direction: column-reverse;
-                align-items: center;
-                justify-content: center;
-
-                .img {
-                    position: relative;
-                    width: 185.48px;
-                    height: 168px;
-                }
-            }
-        }
+      }
     }
 
     .nft {
-        text-align: center;
+      .img {
+        width: 267.08px;
+        height: 94.96px;
+      }
 
-        .img {
-            position: relative;
-            width: 344.08px;
-            height: 123.96px;
-            margin: 30px auto 10px auto;
-        }
-
-        p {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 20px;
-        }
+      p {
+        font-size: 12px;
+      }
     }
-}
-
-@include for-phone-only {
-    .home {
-        header {
-            h1 {
-                font-size: 24px;
-            }
-
-            p {
-                font-size: 12px;
-            }
-        }
-
-        section {
-            padding: 50px 24px;
-        }
-
-        .the-game,
-        .multi-chain-economy,
-        .tokenomics {
-            .blocks {
-                .block {
-                    p {
-                        font-size: 12px;
-                    }
-                }
-            }
-
-            &.multi-chain-economy {
-                .blocks {
-                    .img {
-                        width: 160.48px;
-                        height: 145px;
-                    }
-                }
-            }
-        }
-
-        .nft {
-            .img {
-                width: 267.08px;
-                height: 94.96px;
-            }
-
-            p {
-                font-size: 12px;
-            }
-        }
-    }
+  }
 }
 
 @include for-tablet-potrait-up {
-    .home {
-        header {
-            h1 {
-                width: 70%;
-                margin: auto;
-            }
+  .home {
+    header {
+      h1 {
+        width: 70%;
+        margin: auto;
+      }
 
-            p {
-                width: 60%;
-                margin: 30px auto 40px auto;
-            }
-        }
-
-        section {
-            padding: 50px 44px;
-
-            .section-title {
-                font-size: 24px;
-            }
-        }
-
-        .the-game,
-        .multi-chain-economy,
-        .tokenomics {
-
-            .blocks {
-                margin-top: 30px;
-
-                .block {
-                    p {
-                        font-size: 16px;
-                        width: 80%;
-                        margin: auto;
-                    }
-                }
-            }
-
-            &.tokenomics {
-                .blocks {
-                    .tokens-dist {
-                        .chart-data {
-                            .item {
-                                p {
-                                    font-size: 16px;
-                                }
-                            }
-                        }
-
-                        .distribution {
-                            .item {
-                                p {
-                                    font-size: 14px;
-                                    margin: 0;
-                                    width: auto;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+      p {
+        width: 60%;
+        margin: 30px auto 40px auto;
+      }
     }
+
+    section {
+      padding: 50px 44px;
+
+      .section-title {
+        font-size: 24px;
+      }
+    }
+
+    .the-game,
+    .multi-chain-economy,
+    .tokenomics {
+      .blocks {
+        margin-top: 30px;
+
+        .block {
+          p {
+            font-size: 16px;
+            width: 80%;
+            margin: auto;
+          }
+        }
+      }
+
+      &.tokenomics {
+        .blocks {
+          .tokens-dist {
+            .chart-data {
+              .item {
+                p {
+                  font-size: 16px;
+                }
+              }
+            }
+
+            .distribution {
+              .item {
+                p {
+                  font-size: 14px;
+                  margin: 0;
+                  width: auto;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-@include for-tablet-landscape-up {}
+@include for-tablet-landscape-up {
+}
 
 @include for-desktop-up {
-    .home {
-        header {
-            padding: 40px 40px;
-            background-image: url(../../public/header-bg-desktop.png);
-            background-repeat: no-repeat;
-            background-position: bottom;
-            background-size: 100%;
-            width: 95%;
-            margin: 0 auto;
-            height: 85vh;
+  .home {
+    header {
+      padding: 40px 40px;
+      background-image: url(../../public/header-bg-desktop.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: 100%;
+      width: 95%;
+      margin: 0 auto;
+      height: 85vh;
 
-            body.light-mode & {
-                background-image: url(../../public/header-bg-desktop-light.svg);
-            }
+      body.light-mode & {
+        background-image: url(../../public/header-bg-desktop-light.svg);
+      }
 
-            h1 {
-                width: 700px;
-                margin: 0 auto;
-                font-size: 48px;
-                line-height: 61px;
-            }
+      h1 {
+        width: 700px;
+        margin: 0 auto;
+        font-size: 48px;
+        line-height: 61px;
+      }
 
-            p {
-                font-size: 16px;
-                line-height: 28px;
-                margin: 30px auto 40px auto;
-                width: 430px;
-            }
+      p {
+        font-size: 16px;
+        line-height: 28px;
+        margin: 30px auto 40px auto;
+        width: 430px;
+      }
 
-            .ellipse {
-                width: 479px;
-                height: 479px;
-                left: 481px;
-                top: 110px;
-                opacity: 0.07;
-                filter: blur(150px);
-            }
-        }
-
-        section {
-            padding: 100px 80px;
-
-            .section-title {
-                font-size: 32px;
-                line-height: 41px;
-                margin-bottom: 80px;
-            }
-        }
-
-        .the-game,
-        .multi-chain-economy,
-        .tokenomics {
-            .blocks {
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap: 20px;
-
-                .block {
-                    margin: 0 20px;
-                    text-align: start;
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
-
-                    p {
-                        font-size: 16px;
-                        line-height: 28px;
-                        width: 100%;
-                        margin: 0;
-                    }
-                }
-            }
-
-            &.the-game {
-                .blocks {
-                    .img {
-                        width: 520px;
-                        height: 349px;
-                    }
-                }
-            }
-
-            &.multi-chain-economy {
-                .blocks {
-                    display: grid;
-
-                    .img {
-                        width: 432px;
-                        height: 391.28px;
-                    }
-                }
-            }
-        }
-
-        .nft {
-            position: relative;
-            overflow-x: hidden;
-
-            .img {
-                width: 879.92px;
-                height: 317px;
-                margin: 30px auto 30px auto;
-            }
-
-            p {
-                line-height: 28px;
-                width: 878px;
-                padding: 0 30px;
-                margin: auto;
-            }
-
-            .ellipse {
-                position: absolute;
-                width: 479px;
-                height: 479px;
-                top: 140px;
-                background: #fff;
-                opacity: 0.2;
-                filter: blur(150px);
-
-                &.left {
-                    left: -340px;
-                }
-
-                &.right {
-                    right: -340px;
-                }
-            }
-        }
+      .ellipse {
+        width: 479px;
+        height: 479px;
+        left: 481px;
+        top: 110px;
+        opacity: 0.07;
+        filter: blur(150px);
+      }
     }
+
+    section {
+      padding: 100px 80px;
+
+      .section-title {
+        font-size: 32px;
+        line-height: 41px;
+        margin-bottom: 80px;
+      }
+    }
+
+    .the-game,
+    .multi-chain-economy,
+    .tokenomics {
+      .blocks {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+
+        .block {
+          margin: 0 20px;
+          text-align: start;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+
+          p {
+            font-size: 16px;
+            line-height: 28px;
+            width: 100%;
+            margin: 0;
+          }
+        }
+      }
+
+      &.the-game {
+        .blocks {
+          .img {
+            width: 520px;
+            height: 349px;
+          }
+        }
+      }
+
+      &.multi-chain-economy {
+        .blocks {
+          display: grid;
+
+          .img {
+            width: 432px;
+            height: 391.28px;
+          }
+        }
+      }
+    }
+
+    .nft {
+      position: relative;
+      overflow-x: hidden;
+
+      .img {
+        width: 879.92px;
+        height: 317px;
+        margin: 30px auto 30px auto;
+      }
+
+      p {
+        line-height: 28px;
+        width: 878px;
+        padding: 0 30px;
+        margin: auto;
+      }
+
+      .ellipse {
+        position: absolute;
+        width: 479px;
+        height: 479px;
+        top: 140px;
+        background: #fff;
+        opacity: 0.2;
+        filter: blur(150px);
+
+        &.left {
+          left: -340px;
+        }
+
+        &.right {
+          right: -340px;
+        }
+      }
+    }
+  }
 }
 
-@include for-big-desktop-up {}
+@include for-big-desktop-up {
+}
