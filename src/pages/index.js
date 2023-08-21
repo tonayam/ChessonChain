@@ -74,9 +74,9 @@ const TheGame = () => {
             collect NFTs and compete in multichain/interchain chess competitions
             and 1v1 matches.
           </p>
-          <a href='#'>
-            <button className='green'>Learn More</button>
-          </a>
+          <button className='green'>
+            <Link href='/about'>Learn More</Link>
+          </button>
         </div>
       </div>
     </section>

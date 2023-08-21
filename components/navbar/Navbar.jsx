@@ -32,12 +32,15 @@ const Navbar = () => {
         <div className='links'>
           <Link href='/'>Game</Link>
           <Link href='about'>About</Link>
-          <Link href='/'>News</Link>
           <Link href='contact'>Support</Link>
         </div>
 
         <div className='socials-waitlist'>
-          <a href='' target='_blank' rel='noreferrer'>
+          <a
+            href='https://twitter.com/ChessOnChain'
+            target='_blank'
+            rel='noreferrer'
+          >
             <Image
               src='/twitter-logo.svg'
               alt='twitter link'
@@ -45,7 +48,11 @@ const Navbar = () => {
               height={34}
             />
           </a>
-          <a href='' target='_blank' rel='noreferrer'>
+          <a
+            href='https://discord.com/invite/PDrGaJNCe3'
+            target='_blank'
+            rel='noreferrer'
+          >
             <Image
               src='/discord-logo.svg'
               alt='discord link'
@@ -64,15 +71,19 @@ const Navbar = () => {
         <Link href='/' onClick={closeNavbar}>
           Game
         </Link>
-        <Link href='about' onClick={closeNavbar}>
-          News
+        <Link href='/about' onClick={closeNavbar}>
+          About
         </Link>
         <Link href='contact' onClick={closeNavbar}>
           Support
         </Link>
         <div className='socials-waitlist'>
           <div className='socials'>
-            <a href='' target='_blank' rel='noreferrer'>
+            <a
+              href='https://twitter.com/ChessOnChain'
+              target='_blank'
+              rel='noreferrer'
+            >
               <Image
                 src='/twitter-logo.svg'
                 alt='twitter link'
@@ -80,7 +91,11 @@ const Navbar = () => {
                 height={34}
               />
             </a>
-            <a href='' target='_blank' rel='noreferrer'>
+            <a
+              href='https://discord.com/invite/PDrGaJNCe3'
+              target='_blank'
+              rel='noreferrer'
+            >
               <Image
                 src='/discord-logo.svg'
                 alt='discord link'

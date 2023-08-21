@@ -6,7 +6,11 @@ const Footer = () => {
     <footer>
       <h4 className='chessonchain'>Support | Chessonchain © 2023 | About</h4>
       <div className='socials'>
-        <a href='' target='_blank' rel='noreferrer'>
+        <a
+          href='https://twitter.com/ChessOnChain'
+          target='_blank'
+          rel='noreferrer'
+        >
           <Image
             src='/twitter-logo.svg'
             alt='twitter link'
@@ -14,7 +18,11 @@ const Footer = () => {
             height={34}
           />
         </a>
-        <a href='' target='_blank' rel='noreferrer'>
+        <a
+          href='https://discord.gg/PDrGaJNCe3'
+          target='_blank'
+          rel='noreferrer'
+        >
           <Image
             src='/discord-logo.svg'
             alt='discord link'

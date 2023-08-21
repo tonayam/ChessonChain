@@ -1,6 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { FaDiscord, FaTwitter } from "react-icons/fa";
+import React from 'react';
+import Link from 'next/link';
+import { FaDiscord, FaTwitter } from 'react-icons/fa';
+import Image from 'next/image';
 
 const Contact = () => {
   return (
@@ -8,18 +9,6 @@ const Contact = () => {
       <div className='text'>
         <h1>Have an inquiry?</h1>
         <p>Ask us anything you want to know</p>
-
-        <div className='socials'>
-          <h2>Follow our socials</h2>
-          <div className='platforms'>
-            <Link href='#'>
-              <FaDiscord className='icon' />
-            </Link>
-            <Link href='#'>
-              <FaTwitter className='icon twiiter' />
-            </Link>
-          </div>
-        </div>
       </div>
       <form action=''>
         <div className='inputs'>
@@ -44,17 +33,6 @@ const Contact = () => {
           Send Message
         </button>
       </form>
-      <div className='socials'>
-        <h2>Follow our socials</h2>
-        <div className='platforms'>
-          <Link href='#'>
-            <FaDiscord className='icon' />
-          </Link>
-          <Link href='#'>
-            <FaTwitter className='icon twiiter' />
-          </Link>
-        </div>
-      </div>
     </main>
   );
 };
