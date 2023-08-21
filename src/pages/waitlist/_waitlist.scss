@@ -1,131 +1,159 @@
-    .waitlist-page {
-        @include flex(center, flex-start, column);
-        padding: 3rem 14px;
+.waitlist-page {
+  @include flex(center, flex-start, column);
+  padding: 3rem 14px;
 
-        h3 {
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
-            margin-bottom: 1.5rem;
+  h3 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .chessonchain.img {
+    width: 9.1rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+
+  form {
+    width: 100%;
+    margin-bottom: 4rem;
+
+    .form-control {
+      @include flex(flex-start, center, column);
+      margin-bottom: 1.5rem;
+      width: 100%;
+
+      label {
+        margin-bottom: 0.5rem;
+
+        &.error {
+          color: rgb(215, 19, 19);
         }
+      }
 
-        .chessonchain.img {
-            width: 9.1rem;
-            height: 4rem;
-            margin-bottom: 2rem;
+      input {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        outline: none;
+        border: 2px solid #fff;
+        &:focus {
+          border: 2px solid $primaryColor;
         }
+      }
 
-        p {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: clamp(0.8rem, 2vw, 1rem);
+      select {
+        width: 100%;
+        padding: 0 1rem;
+        height: 50px;
+        outline: none;
+        font-family: 'Share Tech', sans-serif;
+        border: 2px solid #fff;
+
+        &:focus {
+          border: 2px solid $primaryColor;
         }
+      }
 
-        form {
-            width: 100%;
-            margin-bottom: 4rem;
+      textarea {
+        width: 100%;
+        min-height: 13rem;
+        resize: none;
+        padding: 1rem;
+        outline: none;
+        border: 2px solid #fff;
 
-            .form-control {
-                @include flex(flex-start, center, column);
-                margin-bottom: 1.5rem;
-                width: 100%;
-
-                label {
-                    margin-bottom: 0.5rem;
-                }
-
-                input {
-                    width: 100%;
-                    padding: 0.7rem 1rem;
-                    outline: none;
-                }
-
-                textarea {
-                    width: 100%;
-                    min-height: 13rem;
-                    resize: none;
-                }
-            }
-
-            .btn {
-                @include flex(center, center, row);
-            }
+        &:focus {
+          border: 2px solid $primaryColor;
         }
-
-        .lines {
-            @include flex(center, flex-start, row);
-
-            .short {
-                width: 3.8125rem;
-                height: 0.2rem;
-                stroke-width: 4px;
-                background-color: #FFF;
-                margin-right: 1rem;
-            }
-
-            .long {
-                width: 8.8125rem;
-                height: 0.2rem;
-                background-color: #747474;
-            }
-        }
-
+      }
     }
 
-    @include for-phone-only {
-        .waitlist-page {
-            padding: 3rem 24px;
-        }
+    .btn {
+      @include flex(center, center, row);
+    }
+  }
+
+  .lines {
+    @include flex(center, flex-start, row);
+
+    .short {
+      width: 3.8125rem;
+      height: 0.2rem;
+      stroke-width: 4px;
+      background-color: #fff;
+      margin-right: 1rem;
     }
 
-    @include for-tablet-potrait-up {
-        .waitlist-page {
-            padding: 3rem 40px;
+    .long {
+      width: 8.8125rem;
+      height: 0.2rem;
+      background-color: #747474;
+    }
+  }
+}
 
-            form {
-                width: 70%;
-            }
-        }
+@include for-phone-only {
+  .waitlist-page {
+    padding: 3rem 24px;
+  }
+}
+
+@include for-tablet-potrait-up {
+  .waitlist-page {
+    padding: 3rem 40px;
+
+    form {
+      width: 70%;
+    }
+  }
+}
+
+@include for-tablet-landscape-up {
+  .waitlist-page {
+    padding: 3rem 60px;
+
+    form {
+      width: 50%;
+    }
+  }
+}
+
+@include for-desktop-up {
+  .waitlist-page {
+    padding: 5rem 0;
+
+    .chessonchain.img {
+      width: 17.875rem;
+      height: 7.875rem;
+      margin-bottom: 2rem;
     }
 
-    @include for-tablet-landscape-up {
-        .waitlist-page {
-            padding: 3rem 60px;
-
-            form {
-                width: 50%;
-            }
-        }
+    p {
+      padding: 0 2rem;
+      @include flex(center, center, row);
+      width: 42%;
     }
 
-    @include for-desktop-up {
-        .waitlist-page {
-            padding: 5rem 0;
-
-            .chessonchain.img {
-                width: 17.875rem;
-                height: 7.875rem;
-                margin-bottom: 2rem;
-            }
-
-            p {
-                padding: 0 2rem;
-                @include flex(center, center, row);
-                width: 42%;
-            }
-
-            form {
-                width: 30%;
-            }
-
-            .lines {
-                .short {
-                    width: 4.8125rem;
-                }
-
-                .long {
-                    width: 19.8125rem;
-                }
-            }
-        }
+    form {
+      width: 30%;
     }
 
-    @include for-big-desktop-up {}
+    .lines {
+      .short {
+        width: 4.8125rem;
+      }
+
+      .long {
+        width: 19.8125rem;
+      }
+    }
+  }
+}
+
+@include for-big-desktop-up {
+}

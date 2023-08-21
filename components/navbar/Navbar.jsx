@@ -15,7 +15,12 @@ const Navbar = () => {
     <>
       <nav>
         <Link href='/' className='logo'>
-          <Image src='/logo.png' alt='company logo' fill />
+          <Image
+            src='/logo.png'
+            alt='company logo'
+            fill
+            sizes='(max-width: 768px) 10px, (max-width: 1200px) 18px'
+          />
         </Link>
         <div className='hamburger'>
           {showNavbar ? (

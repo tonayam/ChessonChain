@@ -1,6 +1,8 @@
-import "../styles/styles.scss";
-import Layout from "components/Layout";
-import { AppProvider } from "context/context";
+import '../styles/styles.scss';
+import 'react-toastify/dist/ReactToastify.css';
+import { Slide, ToastContainer } from 'react-toastify';
+import Layout from 'components/Layout';
+import { AppProvider } from 'context/context';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -8,6 +10,7 @@ export default function App({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <ToastContainer transition={Slide} />
     </AppProvider>
   );
 }
