@@ -4,8 +4,23 @@ import { chartData, tokenDistribution } from 'data/data';
 import { useGlobalContext } from 'context/context';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function Home() {
+  const wakeServer = async () => {
+    try {
+      await fetch(`https://chessonchain-waitlist-api.onrender.com`, {
+        method: `GET`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    wakeServer();
+  }, []);
   return (
     <>
       <Head>

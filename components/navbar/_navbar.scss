@@ -2,7 +2,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 14px;
+  padding: 12px 24px;
 
   .logo {
     width: 10px;
@@ -66,7 +66,7 @@ nav {
 
 @include for-phone-only {
   nav {
-    padding: 12px 24px;
+    padding: 12px 14px;
   }
 }
 
