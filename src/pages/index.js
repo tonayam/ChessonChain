@@ -46,11 +46,8 @@ const Header = () => {
       <div className='chessonchain img'>
         <Image src='/chessonchain-block.png' alt='chess on chain' fill />
       </div>
-      <h1>The #1 chess integration with the blockchain</h1>
-      <p>
-        Play and earn in an exciting multi-chain NFT chess game for chess and
-        blockchain enthusiasts.
-      </p>
+      <h1>Multichain blockchain Network</h1>
+      <p>Play and earn checkmate NFTs</p>
       <div className='btn'>
         <button className='grey'>
           <Link href='/waitlist'>Join Waitlist</Link>
@@ -92,12 +89,15 @@ const MultiChainEconomy = () => {
       <div className='blocks'>
         <div className='block'>
           <p>
+            ChessOnchain is a multichain blockchain network for chess gaming ,
+            with play to earn features , Onchain records and competitions
+          </p>
+          <p>
             The idea for a simple economy among multiple blockchain ecosystems
-            for competitions and on-chain records as a data store is useful to
-            the blockchain and gaming markets as competitions help improve
-            market stat, it would boost and improve areas like the global chess
-            market, the blockchain and multi-chain economy since multi-chain is
-            the desired future of the blockchain economy.
+            for competition and Onchain records as data store is useful to the
+            blockchain and gaming markets , that is why we have chosen to build
+            a blockchain specifically for chess gaming , that will connect with
+            several blockchain.
           </p>
         </div>
         <motion.div
