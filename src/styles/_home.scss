@@ -130,6 +130,11 @@
       font-size: 16px;
       line-height: 20px;
     }
+
+    .btn {
+      @include flex(center, center, row);
+      margin-top: 2rem;
+    }
   }
 }
 

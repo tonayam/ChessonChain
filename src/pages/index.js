@@ -148,6 +148,11 @@ const NFT = () => {
         recognized as part of the blockchain chess association, and have special
         abilities and in game advantages
       </p>
+      <div className='btn'>
+        <button className='green'>
+          <Link href='/nft'>Learn More</Link>
+        </button>
+      </div>
       <div className='ellipse left'></div>
       <div className='ellipse right'></div>
     </section>
