@@ -9,14 +9,11 @@ const About = () => {
       <header>
         <h1 className='section-title'>CHESSONCHAIN</h1>
         <p>
-          ChessOnChain is a digital multichain/interchain, Play to Earn NFT game
-          for chess and blockchain enthusiasts. It is a game of chess that is
-          integrated with multiple blockchain ecosystems, the NEAR Protocol,
-          Stacks, and Solana block-chain in which Game data is tokenized from
-          each chain, and backed by a governance token of its substrate app
-          chain. Players of chess can authenticate using their web or mobile
-          wallets to play different game types of chess, for tokens and fun game
-          features.
+          ChessOnchain is a substrate built blockchain for chess gaming and
+          Onchain records , that will last the ages . ChessOnchain will allow
+          multiple blockchains to connect ( Authenticate with their wallets) and
+          play chess , for play to earn features or not . For a start we&apos;re
+          connecting 5 blockchains.
         </p>
         <div className='image'>
           <Image src='/the-game.png' alt='chessboard' fill />
@@ -47,14 +44,15 @@ const Features = () => {
         <p>
           ChessOnChain is a multi-blockchain game, it&apos;s gameplay is
           designed to connect and enable connectivity of multiple blockchains,
-          so far we&apos;re integrating Stacks, Solana, and Near and anchoring
-          it all to an independent chain (substrate chain).
+          so far we&apos;re integrating Polkadot, Near, Stacks, Solana and
+          Etherium and anchoring it all to an independent chain (substrate
+          chain).
         </p>
         <div className='line'></div>
       </div>
       <div className='block'>
         <div className='title-img'>
-          <h3>Tokenized Gameplay</h3>
+          <h3>Tokenized Gaming</h3>
           <div className='img token'>
             <Image src='/token.png' alt='token' fill />
           </div>

@@ -34,7 +34,7 @@ export const gameTypes = [
     info: `Using random selector you're matched with people available to play at that time on the random match function.`,
   },
   {
-    gameType: `Speed Up`,
+    gameType: `Speed Chess`,
     icon: speedChess,
     iconWidth: 45.496,
     iconHeight: 58,
@@ -60,5 +60,12 @@ export const gameTypes = [
     iconWidth: 90,
     iconHeight: 40,
     info: `A chess variant played on two chessboards by four players in teams of two, Normal chess rules apply, except that captured pieces on one board are passed on to the teammate on the other board`,
+  },
+  {
+    gameType: `HANDICAP`,
+    icon: oneVone,
+    iconWidth: 90,
+    iconHeight: 40,
+    info: `A player can remove a piece and offer to play the opponent for some tokens ( any piece the player chooses to handicap )`,
   },
 ];
