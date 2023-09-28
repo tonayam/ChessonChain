@@ -150,7 +150,7 @@ const NFT = () => {
       </p>
       <div className='btn'>
         <button className='green'>
-          <Link href='/nft'>Learn More</Link>
+          <Link href='/nfts'>Learn More</Link>
         </button>
       </div>
       <div className='ellipse left'></div>

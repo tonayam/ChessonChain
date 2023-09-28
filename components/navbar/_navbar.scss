@@ -43,7 +43,7 @@ nav {
   }
 
   &.show {
-    height: 550px;
+    height: calc(100vh - 31px);
   }
 
   .socials-waitlist {

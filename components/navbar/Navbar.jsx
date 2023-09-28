@@ -31,6 +31,7 @@ const Navbar = () => {
         </div>
         <div className='links'>
           <Link href='/'>Game</Link>
+          <Link href='/nfts'>NFTs</Link>
           <Link href='about'>About</Link>
           <Link href='contact'>Support</Link>
         </div>
@@ -70,6 +71,9 @@ const Navbar = () => {
       <div className={`mobile-links ${showNavbar && `show`}`}>
         <Link href='/' onClick={closeNavbar}>
           Game
+        </Link>
+        <Link href='/nfts' onClick={closeNavbar}>
+          NFTs
         </Link>
         <Link href='/about' onClick={closeNavbar}>
           About

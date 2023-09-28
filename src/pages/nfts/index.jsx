@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { gameTypes } from 'data/data';
 import Link from 'next/link';
 
-const NFT = () => {
+const NFTS = () => {
   return (
     <main className='nft-page'>
       <header>
@@ -188,4 +188,4 @@ const StakeRiskHouse = () => {
   );
 };
 
-export default NFT;
+export default NFTS;
