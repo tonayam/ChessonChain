@@ -71,7 +71,7 @@ const NftUtilities = () => {
 
         <div className='item'>
           <h3>QUEENS TOURNAMENT PRIZES ARE:</h3>
-          <p>First place 100$</p>
+          <p>First place 1000$</p>
           <p>Second place 500$</p>
           <p>Third place 250$</p>
         </div>

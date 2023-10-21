@@ -46,7 +46,7 @@ const Header = () => {
       <div className='chessonchain img'>
         <Image src='/chessonchain-block.png' alt='chess on chain' fill />
       </div>
-      <h1>Multichain blockchain Network</h1>
+      <h1>Multichain Chess Gaming Network</h1>
       <p>Play and earn checkmate NFTs</p>
       <div className='btn'>
         <button className='grey'>
